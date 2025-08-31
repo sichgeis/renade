@@ -314,15 +314,17 @@
 
   function updateLangToggle() {
     if (!els.langToggle) return;
-    els.langToggle.textContent = (state.locale || "de").toUpperCase();
-    els.langToggle.setAttribute(
-      "aria-label",
-      state.content?.ui
-        ? state.content.ui.langToggleAria ||
-            (state.locale === "en" ? "Switch language" : "Sprache wechseln")
-        : state.locale === "en"
-        ? "Switch language"
-        : "Sprache wechseln"
+
+    const currentLocale = state.locale || "de";
+    const targetLocale = currentLocale === "de" ? "en" : "de";
+    els.langToggle.textContent = targetLocale.toUpperCase();
+
+    const ariaLabel = currentLocale === "de"
+      ? "Auf Englisch wechseln"
+      : "Switch to German";
+
+    els.langToggle.setAttribute("aria-label",
+      state.content?.ui?.langToggleAria || ariaLabel
     );
   }
 
