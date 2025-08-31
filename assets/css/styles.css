@@ -152,6 +152,9 @@ h3 {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  min-height: 44px; /* touch target */
+  line-height: 1.2;
+  flex: 0 0 auto; /* prevent shrinking in flex rows */
 }
 .btn:focus {
   outline: 3px solid #000;
@@ -174,6 +177,29 @@ h3 {
   background: transparent;
   border-color: var(--color-primary);
   color: var(--color-primary);
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(127, 58, 169, 0.08);
+}
+
+/* CTA row layout for hero buttons */
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: var(--space);
+}
+@media (max-width: 520px) {
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-row .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
