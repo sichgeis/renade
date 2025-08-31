@@ -3,119 +3,125 @@
   const state = {
     config: null,
     content: null,
-    locale: 'de'
+    locale: "de",
   };
 
   const els = {
-    siteTitle: document.getElementById('siteTitle'),
-    skipLink: document.getElementById('skip-link'),
-    langNav: document.getElementById('lang-nav'),
-    heroName: document.getElementById('hero-name'),
-    heroLifespan: document.getElementById('hero-lifespan'),
-    heroTagline: document.getElementById('hero-tagline'),
-    donateCta: document.getElementById('donate-cta'),
-    aboutTitle: document.getElementById('about-title'),
-    aboutText: document.getElementById('about-text'),
-    aboutQuotes: document.getElementById('about-quotes'),
-    gallery: document.getElementById('gallery'),
-    testimonials: document.getElementById('testimonials'),
-    submitMail: document.getElementById('submit-mail'),
-    memoriesTitle: document.getElementById('memories-title'),
-    donateTitle: document.getElementById('donate-title'),
-    donateTransparency: document.getElementById('donate-transparency'),
-    donateBreakdown: document.getElementById('donate-breakdown'),
-    bank: document.getElementById('bank'),
-    bankTitle: document.getElementById('bank-title'),
-    bankAccountHolderLabel: document.getElementById('bank-accountHolderLabel'),
-    bankAccountName: document.getElementById('bank-accountName'),
-    bankIban: document.getElementById('bank-iban'),
-    bankBic: document.getElementById('bank-bic'),
-    bankReference: document.getElementById('bank-reference'),
-    paypal: document.getElementById('paypal'),
-    paypalTitle: document.getElementById('paypal-title'),
-    paypalUrl: document.getElementById('paypal-url'),
-    paypalNote: document.getElementById('paypal-note'),
-    cash: document.getElementById('cashDrop'),
-    cashTitle: document.getElementById('cash-title'),
-    cashDesc: document.getElementById('cash-desc'),
-    cashAddress: document.getElementById('cash-address'),
-    eventsTitle: document.getElementById('events-title'),
-    eventsList: document.getElementById('events-list'),
-    faqTitle: document.getElementById('faq-title'),
-    faqList: document.getElementById('faq-list'),
-    contactTitle: document.getElementById('contact-title'),
-    contactNote: document.getElementById('contact-note'),
-    footerCredits: document.getElementById('footer-credits'),
-    footerHashtag: document.getElementById('footer-hashtag'),
-    imprint: document.getElementById('imprint'),
-    privacy: document.getElementById('privacy'),
-    imprintSummary: document.getElementById('imprint-summary'),
-    privacySummary: document.getElementById('privacy-summary'),
-    langToggle: document.getElementById('lang-toggle'),
-    shareBtn: document.getElementById('share-btn')
+    siteTitle: document.getElementById("siteTitle"),
+    skipLink: document.getElementById("skip-link"),
+    langNav: document.getElementById("lang-nav"),
+    heroName: document.getElementById("hero-name"),
+    heroLifespan: document.getElementById("hero-lifespan"),
+    heroTagline: document.getElementById("hero-tagline"),
+    donateCta: document.getElementById("donate-cta"),
+    aboutTitle: document.getElementById("about-title"),
+    aboutText: document.getElementById("about-text"),
+    aboutQuotes: document.getElementById("about-quotes"),
+    gallery: document.getElementById("gallery"),
+    testimonials: document.getElementById("testimonials"),
+    submitMail: document.getElementById("submit-mail"),
+    memoriesTitle: document.getElementById("memories-title"),
+    donateTitle: document.getElementById("donate-title"),
+    donateTransparency: document.getElementById("donate-transparency"),
+    donateBreakdown: document.getElementById("donate-breakdown"),
+    bank: document.getElementById("bank"),
+    bankTitle: document.getElementById("bank-title"),
+    bankAccountHolderLabel: document.getElementById("bank-accountHolderLabel"),
+    bankAccountName: document.getElementById("bank-accountName"),
+    bankIban: document.getElementById("bank-iban"),
+    bankReference: document.getElementById("bank-reference"),
+    paypal: document.getElementById("paypal"),
+    paypalTitle: document.getElementById("paypal-title"),
+    paypalUrl: document.getElementById("paypal-url"),
+    paypalNote: document.getElementById("paypal-note"),
+    cash: document.getElementById("cashDrop"),
+    cashTitle: document.getElementById("cash-title"),
+    cashDesc: document.getElementById("cash-desc"),
+    cashAddress: document.getElementById("cash-address"),
+    eventsTitle: document.getElementById("events-title"),
+    eventsList: document.getElementById("events-list"),
+    faqTitle: document.getElementById("faq-title"),
+    faqList: document.getElementById("faq-list"),
+    contactTitle: document.getElementById("contact-title"),
+    contactNote: document.getElementById("contact-note"),
+    footerCredits: document.getElementById("footer-credits"),
+    footerHashtag: document.getElementById("footer-hashtag"),
+    imprint: document.getElementById("imprint"),
+    privacy: document.getElementById("privacy"),
+    imprintSummary: document.getElementById("imprint-summary"),
+    privacySummary: document.getElementById("privacy-summary"),
+    langToggle: document.getElementById("lang-toggle"),
+    shareBtn: document.getElementById("share-btn"),
   };
 
   // i18n: detect preferred locale, constrain to available locales
   function detectLocale(locales, fallback) {
-    const nav = navigator.language || navigator.userLanguage || '';
-    const short = nav.toLowerCase().slice(0,2);
+    const nav = navigator.language || navigator.userLanguage || "";
+    const short = nav.toLowerCase().slice(0, 2);
     return locales.includes(short) ? short : fallback;
   }
 
   async function loadJSON(path) {
-    const res = await fetch(path, { cache: 'no-cache' });
-    if (!res.ok) throw new Error('Failed to load ' + path);
+    const res = await fetch(path, { cache: "no-cache" });
+    if (!res.ok) throw new Error("Failed to load " + path);
     return res.json();
   }
 
   function setTheme(theme) {
     if (!theme) return;
     const root = document.documentElement;
-    if (theme.primary) root.style.setProperty('--color-primary', theme.primary);
-    if (theme.primarySoft) root.style.setProperty('--color-primary-soft', theme.primarySoft);
+    if (theme.primary) root.style.setProperty("--color-primary", theme.primary);
+    if (theme.primarySoft)
+      root.style.setProperty("--color-primary-soft", theme.primarySoft);
     // Rainbow accent bar optional
     if (theme.accentRainbow) {
-      let bar = document.querySelector('.accent-rainbow');
+      let bar = document.querySelector(".accent-rainbow");
       if (!bar) {
-        bar = document.createElement('div');
-        bar.className = 'accent-rainbow';
-        document.querySelector('.site-header')?.appendChild(bar);
+        bar = document.createElement("div");
+        bar.className = "accent-rainbow";
+        document.querySelector(".site-header")?.appendChild(bar);
       }
     }
   }
 
   function formatCurrency(euro) {
-    return new Intl.NumberFormat(state.locale === 'en' ? 'en-DE' : 'de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(euro);
+    return new Intl.NumberFormat(state.locale === "en" ? "en-DE" : "de-DE", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+    }).format(euro);
   }
 
   function renderHero() {
     const { hero } = state.content;
-    els.heroName.textContent = hero?.name || '';
-    els.heroLifespan.textContent = hero?.lifespan || '';
-    els.heroTagline.textContent = hero?.tagline || '';
-    if (els.donateCta) els.donateCta.textContent = state.content?.ui?.donateCta || els.donateCta.textContent;
+    els.heroName.textContent = hero?.name || "";
+    els.heroLifespan.textContent = hero?.lifespan || "";
+    els.heroTagline.textContent = hero?.tagline || "";
+    if (els.donateCta)
+      els.donateCta.textContent =
+        state.content?.ui?.donateCta || els.donateCta.textContent;
     // update alt text if provided
-    const heroImg = document.getElementById('hero-image');
-    if (heroImg && state.content?.ui?.heroImageAlt) heroImg.alt = state.content.ui.heroImageAlt;
+    const heroImg = document.getElementById("hero-image");
+    if (heroImg && state.content?.ui?.heroImageAlt)
+      heroImg.alt = state.content.ui.heroImageAlt;
   }
-
-  
 
   function renderAbout() {
     const about = state.content?.about;
     const hasText = about?.text && about.text.trim().length > 0;
-    document.getElementById('about').hidden = !hasText && !(about?.quotes?.length);
+    document.getElementById("about").hidden =
+      !hasText && !about?.quotes?.length;
     if (hasText) els.aboutText.textContent = about.text;
 
-    els.aboutQuotes.innerHTML = '';
-    (about?.quotes || []).forEach(q => {
-      const li = document.createElement('li');
-      const block = document.createElement('blockquote');
+    els.aboutQuotes.innerHTML = "";
+    (about?.quotes || []).forEach((q) => {
+      const li = document.createElement("li");
+      const block = document.createElement("blockquote");
       // Use textContent to avoid HTML injection and rely on CSS to preserve newlines
-      block.textContent = q.text || '';
-      const author = document.createElement('div');
-      author.className = 'muted';
-      author.textContent = q.author || '';
+      block.textContent = q.text || "";
+      const author = document.createElement("div");
+      author.className = "muted";
+      author.textContent = q.author || "";
       li.appendChild(block);
       li.appendChild(author);
       els.aboutQuotes.appendChild(li);
@@ -126,52 +132,56 @@
     const mem = state.content?.memories;
     const gallery = mem?.gallery || [];
     const testimonials = mem?.testimonials || [];
-    document.getElementById('memories').hidden = gallery.length === 0 && testimonials.length === 0;
+    document.getElementById("memories").hidden =
+      gallery.length === 0 && testimonials.length === 0;
 
-    els.gallery.innerHTML = '';
-    gallery.forEach(item => {
-      const fig = document.createElement('figure');
-      const img = document.createElement('img');
+    els.gallery.innerHTML = "";
+    gallery.forEach((item) => {
+      const fig = document.createElement("figure");
+      const img = document.createElement("img");
       img.src = item.src;
-      img.alt = item.alt || '';
-      img.loading = 'lazy';
-      img.decoding = 'async';
+      img.alt = item.alt || "";
+      img.loading = "lazy";
+      img.decoding = "async";
       fig.appendChild(img);
       if (item.caption) {
-        const cap = document.createElement('figcaption');
+        const cap = document.createElement("figcaption");
         cap.textContent = item.caption;
         fig.appendChild(cap);
       }
       els.gallery.appendChild(fig);
     });
 
-    els.testimonials.innerHTML = '';
-    testimonials.forEach(t => {
-      const li = document.createElement('li');
-      li.innerHTML = `<p>${t.text}</p><div class="muted">${t.name || ''}</div>`;
+    els.testimonials.innerHTML = "";
+    testimonials.forEach((t) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<p>${t.text}</p><div class="muted">${t.name || ""}</div>`;
       els.testimonials.appendChild(li);
     });
 
     // mailto for submissions
-    const subject = mem?.mailtoSubject || '';
-    const body = mem?.mailtoBody || '';
-    const mail = state.config?.contact?.email || '';
-    els.submitMail.href = `mailto:${encodeURIComponent(mail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    els.submitMail.textContent = state.content?.memories?.submissionNote || '';
+    const subject = mem?.mailtoSubject || "";
+    const body = mem?.mailtoBody || "";
+    const mail = state.config?.contact?.email || "";
+    els.submitMail.href = `mailto:${encodeURIComponent(
+      mail
+    )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    els.submitMail.textContent = state.content?.memories?.submissionNote || "";
   }
 
   function renderDonate() {
     const donate = state.content?.donate;
     const cfg = state.config?.donation;
-    const donateSection = document.getElementById('donate');
+    const donateSection = document.getElementById("donate");
     donateSection.hidden = !donate && !cfg;
 
-    if (els.donateTitle && state.content?.ui?.titles?.donate) els.donateTitle.textContent = state.content.ui.titles.donate;
-    els.donateTransparency.textContent = donate?.transparency || '';
+    if (els.donateTitle && state.content?.ui?.titles?.donate)
+      els.donateTitle.textContent = state.content.ui.titles.donate;
+    els.donateTransparency.textContent = donate?.transparency || "";
 
-    els.donateBreakdown.innerHTML = '';
-    (donate?.costBreakdown || []).forEach(row => {
-      const li = document.createElement('li');
+    els.donateBreakdown.innerHTML = "";
+    (donate?.costBreakdown || []).forEach((row) => {
+      const li = document.createElement("li");
       li.innerHTML = `<span>${row.item}</span><span>${row.amount}</span>`;
       els.donateBreakdown.appendChild(li);
     });
@@ -179,15 +189,23 @@
     // bank
     if (cfg?.bank?.enabled) {
       els.bank.hidden = false;
-      if (els.bankTitle && state.content?.ui?.donate?.bankTitle) els.bankTitle.textContent = state.content.ui.donate.bankTitle;
-      if (els.bankAccountHolderLabel && state.content?.ui?.donate?.bankAccountHolderLabel) els.bankAccountHolderLabel.textContent = state.content.ui.donate.bankAccountHolderLabel + ' ';
-      if (state.content?.ui?.donate?.bankIbanLabel) document.getElementById('bank-ibanLabel').textContent = state.content.ui.donate.bankIbanLabel + ' ';
-      if (state.content?.ui?.donate?.bankBicLabel) document.getElementById('bank-bicLabel').textContent = state.content.ui.donate.bankBicLabel + ' ';
-      if (state.content?.ui?.donate?.bankReferenceLabel) document.getElementById('bank-referenceLabel').textContent = state.content.ui.donate.bankReferenceLabel + ' ';
-      els.bankAccountName.textContent = cfg.bank.accountName || '';
-      els.bankIban.textContent = cfg.bank.iban || '';
-      els.bankBic.textContent = cfg.bank.bic || '';
-      els.bankReference.textContent = cfg.bank.reference || '';
+      if (els.bankTitle && state.content?.ui?.donate?.bankTitle)
+        els.bankTitle.textContent = state.content.ui.donate.bankTitle;
+      if (
+        els.bankAccountHolderLabel &&
+        state.content?.ui?.donate?.bankAccountHolderLabel
+      )
+        els.bankAccountHolderLabel.textContent =
+          state.content.ui.donate.bankAccountHolderLabel + " ";
+      if (state.content?.ui?.donate?.bankIbanLabel)
+        document.getElementById("bank-ibanLabel").textContent =
+          state.content.ui.donate.bankIbanLabel + " ";
+      if (state.content?.ui?.donate?.bankReferenceLabel)
+        document.getElementById("bank-referenceLabel").textContent =
+          state.content.ui.donate.bankReferenceLabel + " ";
+      els.bankAccountName.textContent = cfg.bank.accountName || "";
+      els.bankIban.textContent = cfg.bank.iban || "";
+      els.bankReference.textContent = cfg.bank.reference || "";
     } else {
       els.bank.hidden = true;
     }
@@ -195,10 +213,13 @@
     // paypal
     if (cfg?.paypal?.enabled) {
       els.paypal.hidden = false;
-      if (els.paypalTitle && state.content?.ui?.donate?.paypalTitle) els.paypalTitle.textContent = state.content.ui.donate.paypalTitle;
-      els.paypalUrl.href = cfg.paypal.url || '#';
-      if (state.content?.ui?.donate?.paypalCta) els.paypalUrl.textContent = state.content.ui.donate.paypalCta;
-      els.paypalNote.textContent = (state.content?.donate?.paypalNote) || cfg.paypal.note || '';
+      if (els.paypalTitle && state.content?.ui?.donate?.paypalTitle)
+        els.paypalTitle.textContent = state.content.ui.donate.paypalTitle;
+      els.paypalUrl.href = cfg.paypal.url || "#";
+      if (state.content?.ui?.donate?.paypalCta)
+        els.paypalUrl.textContent = state.content.ui.donate.paypalCta;
+      els.paypalNote.textContent =
+        state.content?.donate?.paypalNote || cfg.paypal.note || "";
     } else {
       els.paypal.hidden = true;
     }
@@ -206,9 +227,10 @@
     // cash
     if (cfg?.cashDrop?.enabled) {
       els.cash.hidden = false;
-      if (els.cashTitle && state.content?.ui?.donate?.cashTitle) els.cashTitle.textContent = state.content.ui.donate.cashTitle;
-      els.cashDesc.textContent = cfg.cashDrop.description || '';
-      els.cashAddress.textContent = cfg.cashDrop.address || '';
+      if (els.cashTitle && state.content?.ui?.donate?.cashTitle)
+        els.cashTitle.textContent = state.content.ui.donate.cashTitle;
+      els.cashDesc.textContent = cfg.cashDrop.description || "";
+      els.cashAddress.textContent = cfg.cashDrop.address || "";
     } else {
       els.cash.hidden = true;
     }
@@ -216,34 +238,38 @@
 
   function renderEvents() {
     const events = state.content?.events || [];
-    const section = document.getElementById('events');
+    const section = document.getElementById("events");
     section.hidden = events.length === 0;
-    if (els.eventsTitle && state.content?.ui?.titles?.events) els.eventsTitle.textContent = state.content.ui.titles.events;
-    els.eventsList.innerHTML = '';
-    events.forEach(ev => {
-      const li = document.createElement('li');
-      const date = ev.date ? `<div><strong>${ev.date}</strong></div>` : '';
-      const loc = ev.location ? `<div>${ev.location}</div>` : '';
-      const details = ev.details ? `<div>${ev.details}</div>` : '';
-      const more = state.content?.ui?.eventsMore || 'Mehr';
-      const link = ev.link ? `<div><a href="${ev.link}" target="_blank" rel="noopener">${more}</a></div>` : '';
-      li.innerHTML = `<h3>${ev.title || ''}</h3>${date}${loc}${details}${link}`;
+    if (els.eventsTitle && state.content?.ui?.titles?.events)
+      els.eventsTitle.textContent = state.content.ui.titles.events;
+    els.eventsList.innerHTML = "";
+    events.forEach((ev) => {
+      const li = document.createElement("li");
+      const date = ev.date ? `<div><strong>${ev.date}</strong></div>` : "";
+      const loc = ev.location ? `<div>${ev.location}</div>` : "";
+      const details = ev.details ? `<div>${ev.details}</div>` : "";
+      const more = state.content?.ui?.eventsMore || "Mehr";
+      const link = ev.link
+        ? `<div><a href="${ev.link}" target="_blank" rel="noopener">${more}</a></div>`
+        : "";
+      li.innerHTML = `<h3>${ev.title || ""}</h3>${date}${loc}${details}${link}`;
       els.eventsList.appendChild(li);
     });
   }
 
   function renderFaq() {
     const faq = state.content?.faq || [];
-    const section = document.getElementById('faq');
+    const section = document.getElementById("faq");
     section.hidden = faq.length === 0;
-    if (els.faqTitle && state.content?.ui?.titles?.faq) els.faqTitle.textContent = state.content.ui.titles.faq;
-    els.faqList.innerHTML = '';
-    faq.forEach(item => {
-      const details = document.createElement('details');
-      const summary = document.createElement('summary');
-      summary.textContent = item.q || '';
-      const p = document.createElement('p');
-      p.textContent = item.a || '';
+    if (els.faqTitle && state.content?.ui?.titles?.faq)
+      els.faqTitle.textContent = state.content.ui.titles.faq;
+    els.faqList.innerHTML = "";
+    faq.forEach((item) => {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      summary.textContent = item.q || "";
+      const p = document.createElement("p");
+      p.textContent = item.a || "";
       details.appendChild(summary);
       details.appendChild(p);
       els.faqList.appendChild(details);
@@ -251,18 +277,20 @@
   }
 
   function renderContactAndFooter() {
-    if (els.contactTitle && state.content?.ui?.titles?.contact) els.contactTitle.textContent = state.content.ui.titles.contact;
-    els.contactNote.textContent = state.content?.contact?.note || '';
-    const credits = state.content?.footer?.credits || '';
-    const hashtag = state.content?.footer?.hashtag || state.config?.social?.hashtag || '';
+    if (els.contactTitle && state.content?.ui?.titles?.contact)
+      els.contactTitle.textContent = state.content.ui.titles.contact;
+    els.contactNote.textContent = state.content?.contact?.note || "";
+    const credits = state.content?.footer?.credits || "";
+    const hashtag =
+      state.content?.footer?.hashtag || state.config?.social?.hashtag || "";
     els.footerCredits.textContent = credits;
     els.footerHashtag.textContent = hashtag;
 
     const imp = state.config?.contact?.imprint;
     if (imp) {
       els.imprint.innerHTML = `
-        <p><strong>${imp.name || ''}</strong></p>
-        <p>${(imp.address || '').replace(/\n/g,'<br>')}</p>
+        <p><strong>${imp.name || ""}</strong></p>
+        <p>${(imp.address || "").replace(/\n/g, "<br>")}</p>
         <p><a href="mailto:${imp.email}">${imp.email}</a></p>
       `;
     }
@@ -270,20 +298,32 @@
     const priv = state.config?.contact?.privacy;
     if (priv) {
       const p = state.content?.ui?.privacy || {};
-      const controller = priv.controller || '';
-      const lines = (p.lines || []).map(line => line.replace('{controller}', controller));
-      els.privacy.innerHTML = lines.map(txt => `<p>${txt}</p>`).join('');
+      const controller = priv.controller || "";
+      const lines = (p.lines || []).map((line) =>
+        line.replace("{controller}", controller)
+      );
+      els.privacy.innerHTML = lines.map((txt) => `<p>${txt}</p>`).join("");
     }
 
     // Summaries
-    if (els.imprintSummary && state.content?.ui?.imprintSummary) els.imprintSummary.textContent = state.content.ui.imprintSummary;
-    if (els.privacySummary && state.content?.ui?.privacySummary) els.privacySummary.textContent = state.content.ui.privacySummary;
+    if (els.imprintSummary && state.content?.ui?.imprintSummary)
+      els.imprintSummary.textContent = state.content.ui.imprintSummary;
+    if (els.privacySummary && state.content?.ui?.privacySummary)
+      els.privacySummary.textContent = state.content.ui.privacySummary;
   }
 
   function updateLangToggle() {
     if (!els.langToggle) return;
-    els.langToggle.textContent = (state.locale || 'de').toUpperCase();
-    els.langToggle.setAttribute('aria-label', state.content?.ui ? (state.content.ui.langToggleAria || (state.locale === 'en' ? 'Switch language' : 'Sprache wechseln')) : (state.locale === 'en' ? 'Switch language' : 'Sprache wechseln'));
+    els.langToggle.textContent = (state.locale || "de").toUpperCase();
+    els.langToggle.setAttribute(
+      "aria-label",
+      state.content?.ui
+        ? state.content.ui.langToggleAria ||
+            (state.locale === "en" ? "Switch language" : "Sprache wechseln")
+        : state.locale === "en"
+        ? "Switch language"
+        : "Sprache wechseln"
+    );
   }
 
   function applyUIStrings() {
@@ -294,25 +334,31 @@
       document.title = siteTitle;
       if (els.siteTitle) els.siteTitle.textContent = siteTitle;
       const ogt = document.querySelector('meta[property="og:title"]');
-      if (ogt) ogt.setAttribute('content', siteTitle);
+      if (ogt) ogt.setAttribute("content", siteTitle);
     }
     if (ui.metaDescription) {
       const md = document.querySelector('meta[name="description"]');
-      if (md) md.setAttribute('content', ui.metaDescription);
+      if (md) md.setAttribute("content", ui.metaDescription);
       const ogd = document.querySelector('meta[property="og:description"]');
-      if (ogd) ogd.setAttribute('content', ui.metaDescription);
+      if (ogd) ogd.setAttribute("content", ui.metaDescription);
     }
     if (els.skipLink && ui.skipLink) els.skipLink.textContent = ui.skipLink;
-    if (els.langNav && ui.langNavLabel) els.langNav.setAttribute('aria-label', ui.langNavLabel);
-    if (els.aboutTitle && ui.titles?.about) els.aboutTitle.textContent = ui.titles.about;
-    if (els.memoriesTitle && ui.titles?.memories) els.memoriesTitle.textContent = ui.titles.memories;
+    if (els.langNav && ui.langNavLabel)
+      els.langNav.setAttribute("aria-label", ui.langNavLabel);
+    if (els.aboutTitle && ui.titles?.about)
+      els.aboutTitle.textContent = ui.titles.about;
+    if (els.memoriesTitle && ui.titles?.memories)
+      els.memoriesTitle.textContent = ui.titles.memories;
     if (els.shareBtn && ui.share) els.shareBtn.textContent = ui.share;
     // aria labels
     if (ui.aria) {
-      const aq = document.getElementById('about-quotes');
-      if (aq && ui.aria.aboutQuotes) aq.setAttribute('aria-label', ui.aria.aboutQuotes);
-      if (els.gallery && ui.aria.gallery) els.gallery.setAttribute('aria-label', ui.aria.gallery);
-      if (els.testimonials && ui.aria.testimonials) els.testimonials.setAttribute('aria-label', ui.aria.testimonials);
+      const aq = document.getElementById("about-quotes");
+      if (aq && ui.aria.aboutQuotes)
+        aq.setAttribute("aria-label", ui.aria.aboutQuotes);
+      if (els.gallery && ui.aria.gallery)
+        els.gallery.setAttribute("aria-label", ui.aria.gallery);
+      if (els.testimonials && ui.aria.testimonials)
+        els.testimonials.setAttribute("aria-label", ui.aria.testimonials);
     }
     // ensure language toggle reflects current locale
     updateLangToggle();
@@ -324,8 +370,8 @@
       state.content = await loadJSON(path);
     } catch (e) {
       // fallback to de if missing
-      if (locale !== 'de') {
-        state.content = await loadJSON('data/content.de.json');
+      if (locale !== "de") {
+        state.content = await loadJSON("data/content.de.json");
       } else {
         throw e;
       }
@@ -335,11 +381,11 @@
   function attachInteractions() {
     // language toggle
     if (els.langToggle) {
-      els.langToggle.addEventListener('click', async () => {
-        const next = state.locale === 'de' ? 'en' : 'de';
+      els.langToggle.addEventListener("click", async () => {
+        const next = state.locale === "de" ? "en" : "de";
         if (state.locale === next) return;
         state.locale = next;
-        localStorage.setItem('locale', state.locale);
+        localStorage.setItem("locale", state.locale);
         document.documentElement.lang = state.locale;
         await loadContentForLocale(state.locale);
         renderAll();
@@ -348,24 +394,34 @@
     }
 
     // share functionality
-    els.shareBtn.addEventListener('click', async () => {
+    els.shareBtn.addEventListener("click", async () => {
       const shareData = {
-        title: (state.content?.ui?.siteTitle) || state.config?.siteTitle || document.title,
-        text: state.content?.hero?.tagline || '',
-        url: location.href
+        title:
+          state.content?.ui?.siteTitle ||
+          state.config?.siteTitle ||
+          document.title,
+        text: state.content?.hero?.tagline || "",
+        url: location.href,
       };
       if (navigator.share) {
-        try { await navigator.share(shareData); } catch {}
+        try {
+          await navigator.share(shareData);
+        } catch {}
       } else {
         try {
           await navigator.clipboard.writeText(location.href);
           const ui = state.content?.ui || {};
-          const copied = ui.shareCopied || 'Link copied';
-          const label = ui.share || 'Share';
+          const copied = ui.shareCopied || "Link copied";
+          const label = ui.share || "Share";
           els.shareBtn.textContent = copied;
-          setTimeout(() => { els.shareBtn.textContent = label; }, 2000);
+          setTimeout(() => {
+            els.shareBtn.textContent = label;
+          }, 2000);
         } catch {
-          window.prompt((state.content?.ui?.copyUrlPrompt || 'Copy URL:'), location.href);
+          window.prompt(
+            state.content?.ui?.copyUrlPrompt || "Copy URL:",
+            location.href
+          );
         }
       }
     });
@@ -386,9 +442,14 @@
 
   async function init() {
     try {
-      state.config = await loadJSON('data/config.json');
+      state.config = await loadJSON("data/config.json");
       // locale detection order: saved -> navigator -> default
-      state.locale = localStorage.getItem('locale') || detectLocale(state.config.locales || ['de','en'], state.config.defaultLocale || 'de');
+      state.locale =
+        localStorage.getItem("locale") ||
+        detectLocale(
+          state.config.locales || ["de", "en"],
+          state.config.defaultLocale || "de"
+        );
       document.documentElement.lang = state.locale;
       await loadContentForLocale(state.locale);
 
