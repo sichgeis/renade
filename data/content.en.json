@@ -5,7 +5,7 @@
     "tagline": "With love, solidarity and gratitude."
   },
   "about": {
-    "text": "Renade stood for solidarity, justice and warmth. She was active in the community and left traces of togetherness. This page collects memories, informs and invites support.",
+    "text": "Renade stood for solidarity, justice and warmth. On 28.08.2025, around 2:16 a.m., she passed away peacefully — surrounded by loved ones. This page gathers memories, shares information about remembrance and donations (goal: €4,000–5,000 for a burial in the forest cemetery at Burg Plesse; any surplus will go to projects Renade was active in) and invites your solidarity.",
     "quotes": [
       {
         "author": "Friend",
@@ -21,23 +21,38 @@
     "gallery": [
       {
         "src": "assets/img/1.jpg",
-        "alt": "Renade smiling",
-        "caption": "A sunny day."
+        "alt": "Zeichnung",
+        "caption": ""
       },
       {
         "src": "assets/img/2.jpg",
-        "alt": "Renade at an action",
-        "caption": "Engagement on site."
+        "alt": "Sexy Renade",
+        "caption": "Sexy Renade!"
       },
       {
         "src": "assets/img/3.jpg",
-        "alt": "Flowers",
-        "caption": "In remembrance."
+        "alt": "Chillen",
+        "caption": "Chillen beim Nachbarschaftsflohmarkt."
       },
       {
         "src": "assets/img/4.jpg",
-        "alt": "Blumen",
-        "caption": "In Erinnerung."
+        "alt": "Kochcrew",
+        "caption": "Beim IDK Camp letztes Jahr, im Küchenteam."
+      },
+      {
+        "src": "assets/img/5.jpg",
+        "alt": "Gedicht",
+        "caption": "Gedicht \"Rendade\""
+      },
+      {
+        "src": "assets/img/6.jpg",
+        "alt": "Andenken",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/7.jpg",
+        "alt": "Premiere im ThOP",
+        "caption": "Premiere im ThOP"
       }
     ],
     "testimonials": [

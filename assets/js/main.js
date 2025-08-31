@@ -110,7 +110,14 @@
     els.aboutQuotes.innerHTML = '';
     (about?.quotes || []).forEach(q => {
       const li = document.createElement('li');
-      li.innerHTML = `<blockquote>“${q.text}”</blockquote><div class="muted">${q.author || ''}</div>`;
+      const block = document.createElement('blockquote');
+      // Use textContent to avoid HTML injection and rely on CSS to preserve newlines
+      block.textContent = q.text || '';
+      const author = document.createElement('div');
+      author.className = 'muted';
+      author.textContent = q.author || '';
+      li.appendChild(block);
+      li.appendChild(author);
       els.aboutQuotes.appendChild(li);
     });
   }

@@ -218,6 +218,12 @@ h3 {
   border-radius: 6px;
 }
 
+/* Preserve line breaks in poems/quotes coming from JSON */
+.quotes blockquote {
+  white-space: pre-line;
+  margin: 0;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
