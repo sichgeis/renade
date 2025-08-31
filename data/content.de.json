@@ -55,19 +55,6 @@
         "caption": "Premiere im ThOP"
       }
     ],
-    "testimonials": [
-      {
-        "name": "A.",
-        "text": "Danke für deine Unterstützung in schweren Zeiten."
-      },
-      {
-        "name": "K.",
-        "text": "Deine Klarheit und Wärme bleiben."
-      },
-      {
-        "name": "",
-        "text": "In Gedanken bei dir."
-      }
-    ]
+    "testimonials": []
   }
 }
