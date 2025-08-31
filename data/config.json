@@ -1,0 +1,47 @@
+{
+  "siteTitle": "Für Renade – Solidarität und Gedenken",
+  "defaultLocale": "de",
+  "locales": ["de", "en"],
+  "donation": {
+    "goalMin": 4000,
+    "goalMax": 5000,
+    "raised": 0,
+    "bank": {
+      "enabled": true,
+      "accountName": "Peter [Nachname]",
+      "iban": "DE00 0000 0000 0000 0000 00",
+      "bic": "XXXXDEXX",
+      "reference": "Soli Renade"
+    },
+    "paypal": {
+      "enabled": true,
+      "url": "https://paypal.me/BEISPIEL",
+      "note": "Bitte Friends & Family, wenn möglich."
+    },
+    "cashDrop": {
+      "enabled": false,
+      "description": "Briefumschlag in Postkasten",
+      "address": ""
+    }
+  },
+  "contact": {
+    "email": "haaa@posteo.de",
+    "responsibleName": "Peter",
+    "imprint": {
+      "name": "Peter [Nachname]",
+      "address": "[Adresse einfügen]",
+      "email": "haaa@posteo.de"
+    },
+    "privacy": {
+      "controller": "Peter [Nachname]"
+    }
+  },
+  "theme": {
+    "primary": "#7f3aa9",
+    "primarySoft": "#e9d7f2",
+    "accentRainbow": true
+  },
+  "social": {
+    "hashtag": "#renade"
+  }
+}

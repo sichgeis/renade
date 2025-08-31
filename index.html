@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Für Renade – Solidarität und Gedenken</title>
+  <meta name="description" content="In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.">
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Für Renade – Solidarität und Gedenken">
+  <meta property="og:description" content="In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/social-share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <link rel="icon" href="assets/img/favicon.png">
+  
+  <!-- System font stack, no external fonts. -->
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <noscript>
+    <style>
+      /* Ensure content is readable without JS */
+      .js-only { display: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 id="siteTitle">Für Renade – Solidarität und Gedenken</h1>
+      <nav aria-label="Sprachwahl">
+        <button id="lang-de" class="lang-btn" data-lang="de" aria-pressed="true">DE</button>
+        <button id="lang-en" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero -->
+    <section id="hero" class="section-hero" aria-labelledby="hero-title">
+      <div class="container grid-hero">
+        <div class="hero-media">
+          <img id="hero-image" src="assets/img/1.jpg" srcset="assets/img/1.jpg 600w, assets/img/1@2x.jpg 1200w" sizes="(max-width: 640px) 100vw, 600px" alt="Porträtfoto von Renade" loading="lazy" decoding="async">
+        </div>
+        <div class="hero-content">
+          <h2 id="hero-title"><span id="hero-name">Renade</span> <small id="hero-lifespan" class="muted"></small></h2>
+          <p id="hero-tagline" class="lead">In Liebe, Solidarität und Dankbarkeit.</p>
+          <div class="cta-row">
+            <a id="donate-cta" class="btn btn-primary" href="#donate">Jetzt spenden</a>
+            <button id="share-btn" class="btn btn-ghost" type="button">Teilen</button>
+          </div>
+          <div class="progress" aria-labelledby="progress-label" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+          </div>
+          <p id="progress-label" class="progress-label">Start: 0 € von 4.000–5.000 €</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">Über Renade</h2>
+        <p id="about-text"></p>
+        <ul id="about-quotes" class="quotes" aria-label="Zitate"></ul>
+      </div>
+    </section>
+
+    <!-- Memories -->
+    <section id="memories" class="section" aria-labelledby="memories-title">
+      <div class="container">
+        <h2 id="memories-title">Erinnerungen & Wirkung</h2>
+        <div id="gallery" class="gallery" aria-label="Bildergalerie"></div>
+        <ul id="testimonials" class="testimonials" aria-label="Stimmen"></ul>
+        <div class="actions">
+          <a id="submit-mail" class="btn btn-secondary" href="#">Erinnerung senden</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate -->
+    <section id="donate" class="section" aria-labelledby="donate-title">
+      <div class="container">
+        <h2 id="donate-title">Spenden & Transparenz</h2>
+        <p id="donate-transparency"></p>
+        <ul id="donate-breakdown" class="breakdown"></ul>
+
+        <div id="donate-options" class="donate-options">
+          <div id="bank" class="donate-card" hidden>
+            <h3>Banküberweisung</h3>
+            <p><strong>Kontoinhaber: </strong><span id="bank-accountName"></span></p>
+            <p><strong>IBAN: </strong><span id="bank-iban"></span></p>
+            <p><strong>BIC: </strong><span id="bank-bic"></span></p>
+            <p><strong>Verwendungszweck: </strong><span id="bank-reference"></span></p>
+          </div>
+          <div id="paypal" class="donate-card" hidden>
+            <h3>PayPal</h3>
+            <p><a id="paypal-url" class="btn btn-primary" href="#" rel="noopener" target="_blank">Zu PayPal</a></p>
+            <p id="paypal-note" class="muted"></p>
+          </div>
+          <div id="cashDrop" class="donate-card" hidden>
+            <h3>Bar/Briefumschlag</h3>
+            <p id="cash-desc"></p>
+            <p id="cash-address" class="muted"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="section" aria-labelledby="events-title">
+      <div class="container">
+        <h2 id="events-title">Termine</h2>
+        <ul id="events-list" class="events"></ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <div id="faq-list" class="faq"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Kontakt</h2>
+        <p id="contact-note"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p id="footer-credits" class="muted">In Verantwortung: Peter</p>
+      <p id="footer-hashtag" class="muted"></p>
+
+      <details>
+        <summary>Impressum</summary>
+        <div id="imprint"></div>
+      </details>
+      <details>
+        <summary>Datenschutz</summary>
+        <div id="privacy"></div>
+      </details>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <noscript>
+    <div class="noscript container">
+      Diese Seite funktioniert auch ohne JavaScript, zeigt jedoch erweiterte Inhalte (Fortschritt, i18n, Teilen) mit JavaScript an.
+    </div>
+  </noscript>
+</body>
+</html>

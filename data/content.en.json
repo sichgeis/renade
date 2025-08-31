@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "name": "Renade",
+    "lifespan": "† 2025",
+    "tagline": "With love, solidarity and gratitude."
+  },
+  "about": {
+    "text": "Short portrait about values, engagement and warmth.",
+    "quotes": [
+      { "author": "Friend", "text": "Renade showed me solidarity in action." }
+    ]
+  },
+  "memories": {
+    "gallery": [
+      { "src": "assets/img/1.jpg", "alt": "Renade smiling", "caption": "A sunny day." }
+    ],
+    "testimonials": [
+      { "name": "A.", "text": "Thank you for your support." }
+    ],
+    "submissionNote": "Send us memories, quotes or photos."
+  },
+  "donate": {
+    "transparency": "We collect €4,000–5,000 for funeral and remembrance. Surplus goes to projects Renade was active in.",
+    "costBreakdown": [
+      { "item": "Funeral services", "amount": "approx. €" }
+    ]
+  },
+  "events": [],
+  "faq": [
+    { "q": "How to donate?", "a": "Bank transfer, PayPal or cash as listed above." }
+  ],
+  "contact": { "note": "For submissions and questions: haaa@posteo.de" },
+  "footer": { "credits": "Responsible: Peter", "hashtag": "#renade" }
+}

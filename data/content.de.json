@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "name": "Renade",
+    "lifespan": "† 2025",
+    "tagline": "In Liebe, Solidarität und Dankbarkeit."
+  },
+  "about": {
+    "text": "Renade stand für Solidarität, Gerechtigkeit und Wärme. Sie engagierte sich in der Community und hinterließ Spuren des Miteinanders. Diese Seite sammelt Erinnerungen, informiert und lädt zur Unterstützung ein.",
+    "quotes": [
+      { "author": "Freundin", "text": "Renade hat mir gezeigt, was es heißt, füreinander da zu sein." },
+      { "author": "Mitstreiter", "text": "Ihr Lächeln hat Räume heller gemacht." }
+    ]
+  },
+  "memories": {
+    "gallery": [
+      { "src": "assets/img/1.jpg", "alt": "Renade lächelnd", "caption": "Ein sonniger Tag." },
+      { "src": "assets/img/2.jpg", "alt": "Renade bei einer Aktion", "caption": "Engagement vor Ort." },
+      { "src": "assets/img/3.jpg", "alt": "Blumen", "caption": "In Erinnerung." }
+    ],
+    "testimonials": [
+      { "name": "A.", "text": "Danke für deine Unterstützung in schweren Zeiten." },
+      { "name": "K.", "text": "Deine Klarheit und Wärme bleiben." },
+      { "name": "", "text": "In Gedanken bei dir." }
+    ],
+    "submissionNote": "Schick uns Erinnerungen, Zitate oder Fotos."
+  },
+  "donate": {
+    "transparency": "Wir sammeln 4.000–5.000 €. Die genauen Kosten stehen noch nicht fest. Jeder Euro wird ausschließlich für Bestattung und Gedenken genutzt. Ein möglicher Überhang geht an die Projekte, in denen Renade aktiv war.",
+    "costBreakdown": [
+      { "item": "Bestatter", "amount": "ca. €" },
+      { "item": "Trauerfeierraum", "amount": "ca. €" },
+      { "item": "Druck/Banner", "amount": "ca. €" }
+    ]
+  },
+  "events": [
+    { "title": "Gedenkfeier", "date": "", "location": "", "details": "", "link": "" }
+  ],
+  "faq": [
+    { "q": "Wie kann ich spenden?", "a": "Per Überweisung, PayPal oder bar laut Angaben oben." },
+    { "q": "Was passiert mit einem Überhang?", "a": "Er geht an soziale Projekte, in denen Renade aktiv war." },
+    { "q": "Wer verantwortet die Seite?", "a": "Peter (siehe Impressum)." },
+    { "q": "Werden Daten erhoben?", "a": "Nein. Keine Cookies, kein Tracking, keine Formulare." }
+  ],
+  "contact": {
+    "note": "Für Einsendungen und Fragen: haaa@posteo.de"
+  },
+  "footer": {
+    "credits": "In Verantwortung: Peter",
+    "hashtag": "#renade"
+  }
+}
