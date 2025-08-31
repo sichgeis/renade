@@ -100,14 +100,7 @@
         "caption": "Premiere im ThOP"
       }
     ],
-    "testimonials": [
-      {
-        "name": "A.",
-        "text": "Danke für deine Unterstützung in schweren Zeiten."
-      },
-      { "name": "K.", "text": "Deine Klarheit und Wärme bleiben." },
-      { "name": "", "text": "In Gedanken bei dir." }
-    ],
+    "testimonials": [],
     "submissionNote": "Schick uns Erinnerungen, Zitate oder Fotos.",
     "mailtoSubject": "Erinnerung für Renade",
     "mailtoBody": "Hallo,\n\nich möchte eine Erinnerung für Renade teilen.\nName: ...\nKurztext: ...\nFotos: (optional)\n\nDanke."
@@ -123,7 +116,7 @@
   },
   "events": [
     {
-      "title": "Gedenkfeier",
+      "title": "Noch nicht final",
       "date": "",
       "location": "",
       "details": "",
@@ -131,8 +124,8 @@
     },
     {
       "title": "Soli-Party (in Planung)",
-      "date": "tbd",
-      "location": "tbd",
+      "date": "",
+      "location": "",
       "details": "Es formiert sich eine Gruppe zur Organisation; Datum und Ort folgen.",
       "link": ""
     }

@@ -64,7 +64,7 @@
       {
         "src": "assets/img/1.jpg",
         "alt": "Zeichnung",
-        "caption": ""
+        "caption": "Under construction — contributions welcome at haaa@posteo.de"
       },
       {
         "src": "assets/img/2.jpg",
@@ -89,7 +89,7 @@
       {
         "src": "assets/img/6.jpg",
         "alt": "Andenken",
-        "caption": ""
+        "caption": "Under construction — contributions welcome at haaa@posteo.de"
       },
       {
         "src": "assets/img/7.jpg",
@@ -97,14 +97,7 @@
         "caption": "Premiere im ThOP"
       }
     ],
-    "testimonials": [
-      {
-        "name": "A.",
-        "text": "Thank you for your support in difficult times."
-      },
-      { "name": "K.", "text": "Your clarity and warmth remain." },
-      { "name": "", "text": "Thinking of you." }
-    ],
+    "testimonials": [],
     "submissionNote": "Send us memories, quotes or photos.",
     "mailtoSubject": "Memory for Renade",
     "mailtoBody": "Hello,\n\nI would like to share a memory for Renade.\nName: ...\nShort text: ...\nPhotos: (optional)\n\nThank you."
@@ -121,15 +114,15 @@
   "events": [
     {
       "title": "Memorial gathering",
-      "date": "",
+      "date": "Under construction - more info later",
       "location": "",
       "details": "",
       "link": ""
     },
     {
       "title": "Solidarity party (planning)",
-      "date": "tbd",
-      "location": "tbd",
+      "date": "More info later",
+      "location": "",
       "details": "A group is forming to organize it; date and venue to follow.",
       "link": ""
     }
