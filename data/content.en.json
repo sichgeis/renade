@@ -4,30 +4,91 @@
     "lifespan": "† 2025",
     "tagline": "With love, solidarity and gratitude."
   },
+  "ui": {
+    "siteTitle": "For Renade — Solidarity and Remembrance",
+    "metaDescription": "With love, solidarity and gratitude — information, memories and donations for Renade.",
+    "skipLink": "Skip to content",
+    "langNavLabel": "Language selection",
+    "donateCta": "Donate now",
+    "heroImageAlt": "Portrait photo of Renade",
+    "titles": {
+      "about": "About Renade",
+      "memories": "Memories & Impact",
+      "donate": "Donations & Transparency",
+      "events": "Events",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "aria": {
+      "aboutQuotes": "Quotes",
+      "gallery": "Image gallery",
+      "testimonials": "Messages"
+    },
+    "donate": {
+      "bankTitle": "Bank transfer",
+      "bankAccountHolderLabel": "Account holder:",
+      "bankIbanLabel": "IBAN:",
+      "bankBicLabel": "BIC:",
+      "bankReferenceLabel": "Reference:",
+      "paypalTitle": "PayPal",
+      "paypalCta": "Go to PayPal",
+      "cashTitle": "Cash/envelope"
+    },
+    "imprintSummary": "Imprint",
+    "privacySummary": "Privacy",
+    "privacy": {
+      "lines": [
+        "No personal data is collected, no cookies are set, no tracking is used. No external fonts. Optional CDN is not used.",
+        "Controller: {controller}.",
+        "If you contact us by e-mail, data is processed by the mail provider."
+      ]
+    },
+    "progressStartTemplate": "Start: €0 of {range}",
+    "progressRaisedTemplate": "{raised} of {range}",
+    "eventsMore": "More",
+    "share": "Share",
+    "shareCopied": "Link copied",
+    "copyUrlPrompt": "Copy URL:"
+  },
   "about": {
-    "text": "Short portrait about values, engagement and warmth.",
+    "text": "Renade stood for solidarity, justice and warmth. She was active in the community and left traces of togetherness. This page collects memories, informs and invites support.",
     "quotes": [
-      { "author": "Friend", "text": "Renade showed me solidarity in action." }
+      { "author": "Friend", "text": "Renade showed me what it means to be there for each other." },
+      { "author": "Companion", "text": "Her smile made rooms brighter." }
     ]
   },
   "memories": {
     "gallery": [
-      { "src": "assets/img/1.jpg", "alt": "Renade smiling", "caption": "A sunny day." }
+      { "src": "assets/img/1.jpg", "alt": "Renade smiling", "caption": "A sunny day." },
+      { "src": "assets/img/2.jpg", "alt": "Renade at an action", "caption": "Engagement on site." },
+      { "src": "assets/img/3.jpg", "alt": "Flowers", "caption": "In remembrance." }
     ],
     "testimonials": [
-      { "name": "A.", "text": "Thank you for your support." }
+      { "name": "A.", "text": "Thank you for your support in difficult times." },
+      { "name": "K.", "text": "Your clarity and warmth remain." },
+      { "name": "", "text": "Thinking of you." }
     ],
-    "submissionNote": "Send us memories, quotes or photos."
+    "submissionNote": "Send us memories, quotes or photos.",
+    "mailtoSubject": "Memory for Renade",
+    "mailtoBody": "Hello,\n\nI would like to share a memory for Renade.\nName: ...\nShort text: ...\nPhotos: (optional)\n\nThank you."
   },
   "donate": {
-    "transparency": "We collect €4,000–5,000 for funeral and remembrance. Surplus goes to projects Renade was active in.",
+    "transparency": "We aim to collect €4,000–5,000. Exact costs are not yet final. Every euro will be used solely for funeral and remembrance. Any surplus will go to projects Renade was active in.",
     "costBreakdown": [
-      { "item": "Funeral services", "amount": "approx. €" }
-    ]
+      { "item": "Funeral services", "amount": "approx. €" },
+      { "item": "Memorial venue", "amount": "approx. €" },
+      { "item": "Printing/banner", "amount": "approx. €" }
+    ],
+    "paypalNote": "Please use Friends & Family if possible."
   },
-  "events": [],
+  "events": [
+    { "title": "Memorial gathering", "date": "", "location": "", "details": "", "link": "" }
+  ],
   "faq": [
-    { "q": "How to donate?", "a": "Bank transfer, PayPal or cash as listed above." }
+    { "q": "How can I donate?", "a": "By bank transfer, PayPal or cash as listed above." },
+    { "q": "What happens with any surplus?", "a": "It goes to social projects Renade was active in." },
+    { "q": "Who is responsible for the site?", "a": "Peter (see imprint)." },
+    { "q": "Is any data collected?", "a": "No. No cookies, no tracking, no forms." }
   ],
   "contact": { "note": "For submissions and questions: haaa@posteo.de" },
   "footer": { "credits": "Responsible: Peter", "hashtag": "#renade" }

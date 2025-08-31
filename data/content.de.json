@@ -4,6 +4,52 @@
     "lifespan": "† 2025",
     "tagline": "In Liebe, Solidarität und Dankbarkeit."
   },
+  "ui": {
+    "siteTitle": "Für Renade – Solidarität und Gedenken",
+    "metaDescription": "In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.",
+    "skipLink": "Zum Inhalt springen",
+    "langNavLabel": "Sprachwahl",
+    "donateCta": "Jetzt spenden",
+    "heroImageAlt": "Porträtfoto von Renade",
+    "titles": {
+      "about": "Über Renade",
+      "memories": "Erinnerungen & Wirkung",
+      "donate": "Spenden & Transparenz",
+      "events": "Termine",
+      "faq": "FAQ",
+      "contact": "Kontakt"
+    },
+    "aria": {
+      "aboutQuotes": "Zitate",
+      "gallery": "Bildergalerie",
+      "testimonials": "Stimmen"
+    },
+    "donate": {
+      "bankTitle": "Banküberweisung",
+      "bankAccountHolderLabel": "Kontoinhaber:",
+      "bankIbanLabel": "IBAN:",
+      "bankBicLabel": "BIC:",
+      "bankReferenceLabel": "Verwendungszweck:",
+      "paypalTitle": "PayPal",
+      "paypalCta": "Zu PayPal",
+      "cashTitle": "Bar/Briefumschlag"
+    },
+    "imprintSummary": "Impressum",
+    "privacySummary": "Datenschutz",
+    "privacy": {
+      "lines": [
+        "Es werden keine personenbezogenen Daten erhoben, keine Cookies gesetzt, kein Tracking verwendet. Keine externen Fonts. Optionales CDN wird nicht genutzt.",
+        "Verantwortliche Stelle: {controller}.",
+        "Bei Kontakt per E-Mail werden die Daten durch den Mail-Provider verarbeitet."
+      ]
+    },
+    "progressStartTemplate": "Start: 0 € von {range}",
+    "progressRaisedTemplate": "{raised} von {range}",
+    "eventsMore": "Mehr",
+    "share": "Teilen",
+    "shareCopied": "Link kopiert",
+    "copyUrlPrompt": "URL kopieren:"
+  },
   "about": {
     "text": "Renade stand für Solidarität, Gerechtigkeit und Wärme. Sie engagierte sich in der Community und hinterließ Spuren des Miteinanders. Diese Seite sammelt Erinnerungen, informiert und lädt zur Unterstützung ein.",
     "quotes": [
@@ -22,7 +68,9 @@
       { "name": "K.", "text": "Deine Klarheit und Wärme bleiben." },
       { "name": "", "text": "In Gedanken bei dir." }
     ],
-    "submissionNote": "Schick uns Erinnerungen, Zitate oder Fotos."
+    "submissionNote": "Schick uns Erinnerungen, Zitate oder Fotos.",
+    "mailtoSubject": "Erinnerung für Renade",
+    "mailtoBody": "Hallo,\n\nich möchte eine Erinnerung für Renade teilen.\nName: ...\nKurztext: ...\nFotos: (optional)\n\nDanke."
   },
   "donate": {
     "transparency": "Wir sammeln 4.000–5.000 €. Die genauen Kosten stehen noch nicht fest. Jeder Euro wird ausschließlich für Bestattung und Gedenken genutzt. Ein möglicher Überhang geht an die Projekte, in denen Renade aktiv war.",
@@ -30,7 +78,8 @@
       { "item": "Bestatter", "amount": "ca. €" },
       { "item": "Trauerfeierraum", "amount": "ca. €" },
       { "item": "Druck/Banner", "amount": "ca. €" }
-    ]
+    ],
+    "paypalNote": "Bitte Friends & Family, wenn möglich."
   },
   "events": [
     { "title": "Gedenkfeier", "date": "", "location": "", "details": "", "link": "" }
