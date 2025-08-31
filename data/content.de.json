@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "name": "Renade",
+    "lifespan": "† 2025",
+    "tagline": "In Liebe, Solidarität und Dankbarkeit."
+  },
+  "about": {
+    "text": "Renade stand für Solidarität, Gerechtigkeit und Wärme. Sie engagierte sich in der Community und hinterließ Spuren des Miteinanders. Diese Seite sammelt Erinnerungen, informiert und lädt zur Unterstützung ein.",
+    "quotes": [
+      {
+        "author": "Freundin",
+        "text": "Renade hat mir gezeigt, was es heißt, füreinander da zu sein."
+      },
+      {
+        "author": "Mitstreiter",
+        "text": "Ihr Lächeln hat Räume heller gemacht."
+      }
+    ]
+  },
+  "memories": {
+    "gallery": [
+      {
+        "src": "assets/img/1.jpg",
+        "alt": "Renade lächelnd",
+        "caption": "Ein sonniger Tag."
+      },
+      {
+        "src": "assets/img/2.jpg",
+        "alt": "Renade bei einer Aktion",
+        "caption": "Engagement vor Ort."
+      },
+      {
+        "src": "assets/img/3.jpg",
+        "alt": "Blumen",
+        "caption": "In Erinnerung."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "A.",
+        "text": "Danke für deine Unterstützung in schweren Zeiten."
+      },
+      {
+        "name": "K.",
+        "text": "Deine Klarheit und Wärme bleiben."
+      },
+      {
+        "name": "",
+        "text": "In Gedanken bei dir."
+      }
+    ]
+  }
+}

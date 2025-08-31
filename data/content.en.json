@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "name": "Renade",
+    "lifespan": "† 2025",
+    "tagline": "With love, solidarity and gratitude."
+  },
+  "about": {
+    "text": "Short portrait about values, engagement and warmth.",
+    "quotes": [
+      {
+        "author": "Friend",
+        "text": "Renade showed me solidarity in action."
+      }
+    ]
+  },
+  "memories": {
+    "gallery": [
+      {
+        "src": "assets/img/1.jpg",
+        "alt": "Renade smiling",
+        "caption": "A sunny day."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "A.",
+        "text": "Thank you for your support."
+      }
+    ]
+  }
+}
