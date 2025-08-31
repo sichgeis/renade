@@ -8,13 +8,13 @@
     "raised": 0,
     "bank": {
       "enabled": true,
-      "accountName": "Peter XXX",
-      "iban": "DE00 0000 0000 0000 0000 00",
+      "accountName": "Spendenkonto Renate",
+      "iban": "DE86 5002 4024 9918 3037 31",
       "bic": "XXXXDEXX",
       "reference": "Soli Renade"
     },
     "paypal": {
-      "enabled": true,
+      "enabled": false,
       "url": "https://paypal.me/BEISPIEL",
       "note": "Bitte Friends & Family, wenn möglich."
     },
