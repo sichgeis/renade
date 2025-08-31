@@ -33,6 +33,11 @@
         "src": "assets/img/3.jpg",
         "alt": "Flowers",
         "caption": "In remembrance."
+      },
+      {
+        "src": "assets/img/4.jpg",
+        "alt": "Blumen",
+        "caption": "In Erinnerung."
       }
     ],
     "testimonials": [
