@@ -14,9 +14,6 @@
     heroLifespan: document.getElementById('hero-lifespan'),
     heroTagline: document.getElementById('hero-tagline'),
     donateCta: document.getElementById('donate-cta'),
-    progress: document.querySelector('.progress'),
-    progressBar: document.getElementById('progress-bar'),
-    progressLabel: document.getElementById('progress-label'),
     aboutTitle: document.getElementById('about-title'),
     aboutText: document.getElementById('about-text'),
     aboutQuotes: document.getElementById('about-quotes'),
@@ -102,19 +99,7 @@
     if (heroImg && state.content?.ui?.heroImageAlt) heroImg.alt = state.content.ui.heroImageAlt;
   }
 
-  function renderProgress() {
-    const { donation } = state.config;
-    const ratio = donation.goalMax > 0 ? Math.max(0, Math.min(1, (donation.raised || 0) / donation.goalMax)) : 0;
-    const percent = Math.round(ratio * 100);
-    els.progressBar.style.width = percent + '%';
-    els.progress.setAttribute('aria-valuenow', String(percent));
-    const rangeText = `${formatCurrency(donation.goalMin)}–${formatCurrency(donation.goalMax)}`;
-    const ui = state.content?.ui || {};
-    const labelStart = (donation.raised || 0) > 0
-      ? (ui.progressRaisedTemplate ? ui.progressRaisedTemplate.replace('{raised}', formatCurrency(donation.raised)).replace('{range}', rangeText) : `${formatCurrency(donation.raised)} von ${rangeText}`)
-      : (ui.progressStartTemplate ? ui.progressStartTemplate.replace('{range}', rangeText) : `Start: 0 € von ${rangeText}`);
-    els.progressLabel.textContent = labelStart;
-  }
+  
 
   function renderAbout() {
     const about = state.content?.about;
@@ -384,7 +369,6 @@
     applyUIStrings();
     setTheme(state.config?.theme);
     renderHero();
-    renderProgress();
     renderAbout();
     renderMemories();
     renderDonate();

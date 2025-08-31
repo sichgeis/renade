@@ -176,24 +176,7 @@ h3 {
   color: var(--color-primary);
 }
 
-.progress {
-  height: 14px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: var(--space);
-}
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--color-primary) 0%, #b57cd9 100%);
-  transition: width 400ms ease;
-}
-.progress-label {
-  margin-top: 6px;
-  font-size: 0.95rem;
-}
+
 
 .quotes {
   list-style: none;
