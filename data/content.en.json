@@ -5,11 +5,15 @@
     "tagline": "With love, solidarity and gratitude."
   },
   "about": {
-    "text": "Short portrait about values, engagement and warmth.",
+    "text": "Renade stood for solidarity, justice and warmth. She was active in the community and left traces of togetherness. This page collects memories, informs and invites support.",
     "quotes": [
       {
         "author": "Friend",
-        "text": "Renade showed me solidarity in action."
+        "text": "Renade showed me what it means to be there for each other."
+      },
+      {
+        "author": "Companion",
+        "text": "Her smile made rooms brighter."
       }
     ]
   },
@@ -19,12 +23,30 @@
         "src": "assets/img/1.jpg",
         "alt": "Renade smiling",
         "caption": "A sunny day."
+      },
+      {
+        "src": "assets/img/2.jpg",
+        "alt": "Renade at an action",
+        "caption": "Engagement on site."
+      },
+      {
+        "src": "assets/img/3.jpg",
+        "alt": "Flowers",
+        "caption": "In remembrance."
       }
     ],
     "testimonials": [
       {
         "name": "A.",
-        "text": "Thank you for your support."
+        "text": "Thank you for your support in difficult times."
+      },
+      {
+        "name": "K.",
+        "text": "Your clarity and warmth remain."
+      },
+      {
+        "name": "",
+        "text": "Thinking of you."
       }
     ]
   }

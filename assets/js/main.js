@@ -8,37 +8,52 @@
 
   const els = {
     siteTitle: document.getElementById('siteTitle'),
+    skipLink: document.getElementById('skip-link'),
+    langNav: document.getElementById('lang-nav'),
     heroName: document.getElementById('hero-name'),
     heroLifespan: document.getElementById('hero-lifespan'),
     heroTagline: document.getElementById('hero-tagline'),
+    donateCta: document.getElementById('donate-cta'),
     progress: document.querySelector('.progress'),
     progressBar: document.getElementById('progress-bar'),
     progressLabel: document.getElementById('progress-label'),
+    aboutTitle: document.getElementById('about-title'),
     aboutText: document.getElementById('about-text'),
     aboutQuotes: document.getElementById('about-quotes'),
     gallery: document.getElementById('gallery'),
     testimonials: document.getElementById('testimonials'),
     submitMail: document.getElementById('submit-mail'),
+    memoriesTitle: document.getElementById('memories-title'),
+    donateTitle: document.getElementById('donate-title'),
     donateTransparency: document.getElementById('donate-transparency'),
     donateBreakdown: document.getElementById('donate-breakdown'),
     bank: document.getElementById('bank'),
+    bankTitle: document.getElementById('bank-title'),
+    bankAccountHolderLabel: document.getElementById('bank-accountHolderLabel'),
     bankAccountName: document.getElementById('bank-accountName'),
     bankIban: document.getElementById('bank-iban'),
     bankBic: document.getElementById('bank-bic'),
     bankReference: document.getElementById('bank-reference'),
     paypal: document.getElementById('paypal'),
+    paypalTitle: document.getElementById('paypal-title'),
     paypalUrl: document.getElementById('paypal-url'),
     paypalNote: document.getElementById('paypal-note'),
     cash: document.getElementById('cashDrop'),
+    cashTitle: document.getElementById('cash-title'),
     cashDesc: document.getElementById('cash-desc'),
     cashAddress: document.getElementById('cash-address'),
+    eventsTitle: document.getElementById('events-title'),
     eventsList: document.getElementById('events-list'),
+    faqTitle: document.getElementById('faq-title'),
     faqList: document.getElementById('faq-list'),
+    contactTitle: document.getElementById('contact-title'),
     contactNote: document.getElementById('contact-note'),
     footerCredits: document.getElementById('footer-credits'),
     footerHashtag: document.getElementById('footer-hashtag'),
     imprint: document.getElementById('imprint'),
     privacy: document.getElementById('privacy'),
+    imprintSummary: document.getElementById('imprint-summary'),
+    privacySummary: document.getElementById('privacy-summary'),
     langDe: document.getElementById('lang-de'),
     langEn: document.getElementById('lang-en'),
     shareBtn: document.getElementById('share-btn')
@@ -82,6 +97,10 @@
     els.heroName.textContent = hero?.name || '';
     els.heroLifespan.textContent = hero?.lifespan || '';
     els.heroTagline.textContent = hero?.tagline || '';
+    if (els.donateCta) els.donateCta.textContent = state.content?.ui?.donateCta || els.donateCta.textContent;
+    // update alt text if provided
+    const heroImg = document.getElementById('hero-image');
+    if (heroImg && state.content?.ui?.heroImageAlt) heroImg.alt = state.content.ui.heroImageAlt;
   }
 
   function renderProgress() {
@@ -91,7 +110,10 @@
     els.progressBar.style.width = percent + '%';
     els.progress.setAttribute('aria-valuenow', String(percent));
     const rangeText = `${formatCurrency(donation.goalMin)}–${formatCurrency(donation.goalMax)}`;
-    const labelStart = (donation.raised || 0) > 0 ? `${formatCurrency(donation.raised)} von ${rangeText}` : `Start: 0 € von ${rangeText}`;
+    const ui = state.content?.ui || {};
+    const labelStart = (donation.raised || 0) > 0
+      ? (ui.progressRaisedTemplate ? ui.progressRaisedTemplate.replace('{raised}', formatCurrency(donation.raised)).replace('{range}', rangeText) : `${formatCurrency(donation.raised)} von ${rangeText}`)
+      : (ui.progressStartTemplate ? ui.progressStartTemplate.replace('{range}', rangeText) : `Start: 0 € von ${rangeText}`);
     els.progressLabel.textContent = labelStart;
   }
 
@@ -140,13 +162,11 @@
     });
 
     // mailto for submissions
-    const subject = state.locale === 'en' ? 'Memory for Renade' : 'Erinnerung für Renade';
-    const body = state.locale === 'en'
-      ? 'Hello,\n\nI would like to share a memory for Renade.\nName: ...\nShort text: ...\nPhotos: (optional)\n\nThank you.'
-      : 'Hallo,\n\nich möchte eine Erinnerung für Renade teilen.\nName: ...\nKurztext: ...\nFotos: (optional)\n\nDanke.';
+    const subject = mem?.mailtoSubject || '';
+    const body = mem?.mailtoBody || '';
     const mail = state.config?.contact?.email || '';
     els.submitMail.href = `mailto:${encodeURIComponent(mail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    els.submitMail.textContent = state.content?.memories?.submissionNote || (state.locale === 'en' ? 'Send a memory' : 'Erinnerung senden');
+    els.submitMail.textContent = state.content?.memories?.submissionNote || '';
   }
 
   function renderDonate() {
@@ -155,6 +175,7 @@
     const donateSection = document.getElementById('donate');
     donateSection.hidden = !donate && !cfg;
 
+    if (els.donateTitle && state.content?.ui?.titles?.donate) els.donateTitle.textContent = state.content.ui.titles.donate;
     els.donateTransparency.textContent = donate?.transparency || '';
 
     els.donateBreakdown.innerHTML = '';
@@ -167,6 +188,11 @@
     // bank
     if (cfg?.bank?.enabled) {
       els.bank.hidden = false;
+      if (els.bankTitle && state.content?.ui?.donate?.bankTitle) els.bankTitle.textContent = state.content.ui.donate.bankTitle;
+      if (els.bankAccountHolderLabel && state.content?.ui?.donate?.bankAccountHolderLabel) els.bankAccountHolderLabel.textContent = state.content.ui.donate.bankAccountHolderLabel + ' ';
+      if (state.content?.ui?.donate?.bankIbanLabel) document.getElementById('bank-ibanLabel').textContent = state.content.ui.donate.bankIbanLabel + ' ';
+      if (state.content?.ui?.donate?.bankBicLabel) document.getElementById('bank-bicLabel').textContent = state.content.ui.donate.bankBicLabel + ' ';
+      if (state.content?.ui?.donate?.bankReferenceLabel) document.getElementById('bank-referenceLabel').textContent = state.content.ui.donate.bankReferenceLabel + ' ';
       els.bankAccountName.textContent = cfg.bank.accountName || '';
       els.bankIban.textContent = cfg.bank.iban || '';
       els.bankBic.textContent = cfg.bank.bic || '';
@@ -178,8 +204,10 @@
     // paypal
     if (cfg?.paypal?.enabled) {
       els.paypal.hidden = false;
+      if (els.paypalTitle && state.content?.ui?.donate?.paypalTitle) els.paypalTitle.textContent = state.content.ui.donate.paypalTitle;
       els.paypalUrl.href = cfg.paypal.url || '#';
-      els.paypalNote.textContent = cfg.paypal.note || '';
+      if (state.content?.ui?.donate?.paypalCta) els.paypalUrl.textContent = state.content.ui.donate.paypalCta;
+      els.paypalNote.textContent = (state.content?.donate?.paypalNote) || cfg.paypal.note || '';
     } else {
       els.paypal.hidden = true;
     }
@@ -187,6 +215,7 @@
     // cash
     if (cfg?.cashDrop?.enabled) {
       els.cash.hidden = false;
+      if (els.cashTitle && state.content?.ui?.donate?.cashTitle) els.cashTitle.textContent = state.content.ui.donate.cashTitle;
       els.cashDesc.textContent = cfg.cashDrop.description || '';
       els.cashAddress.textContent = cfg.cashDrop.address || '';
     } else {
@@ -198,13 +227,15 @@
     const events = state.content?.events || [];
     const section = document.getElementById('events');
     section.hidden = events.length === 0;
+    if (els.eventsTitle && state.content?.ui?.titles?.events) els.eventsTitle.textContent = state.content.ui.titles.events;
     els.eventsList.innerHTML = '';
     events.forEach(ev => {
       const li = document.createElement('li');
       const date = ev.date ? `<div><strong>${ev.date}</strong></div>` : '';
       const loc = ev.location ? `<div>${ev.location}</div>` : '';
       const details = ev.details ? `<div>${ev.details}</div>` : '';
-      const link = ev.link ? `<div><a href="${ev.link}" target="_blank" rel="noopener">Mehr</a></div>` : '';
+      const more = state.content?.ui?.eventsMore || 'Mehr';
+      const link = ev.link ? `<div><a href="${ev.link}" target="_blank" rel="noopener">${more}</a></div>` : '';
       li.innerHTML = `<h3>${ev.title || ''}</h3>${date}${loc}${details}${link}`;
       els.eventsList.appendChild(li);
     });
@@ -214,6 +245,7 @@
     const faq = state.content?.faq || [];
     const section = document.getElementById('faq');
     section.hidden = faq.length === 0;
+    if (els.faqTitle && state.content?.ui?.titles?.faq) els.faqTitle.textContent = state.content.ui.titles.faq;
     els.faqList.innerHTML = '';
     faq.forEach(item => {
       const details = document.createElement('details');
@@ -228,6 +260,7 @@
   }
 
   function renderContactAndFooter() {
+    if (els.contactTitle && state.content?.ui?.titles?.contact) els.contactTitle.textContent = state.content.ui.titles.contact;
     els.contactNote.textContent = state.content?.contact?.note || '';
     const credits = state.content?.footer?.credits || '';
     const hashtag = state.content?.footer?.hashtag || state.config?.social?.hashtag || '';
@@ -245,17 +278,50 @@
 
     const priv = state.config?.contact?.privacy;
     if (priv) {
-      els.privacy.innerHTML = `
-        <p>Es werden keine personenbezogenen Daten erhoben, keine Cookies gesetzt, kein Tracking verwendet. Keine externen Fonts. Optionales CDN wird nicht genutzt.</p>
-        <p>Verantwortliche Stelle: ${priv.controller || ''}.</p>
-        <p>Bei Kontakt per E-Mail werden die Daten durch den Mail-Provider verarbeitet.</p>
-      `;
+      const p = state.content?.ui?.privacy || {};
+      const controller = priv.controller || '';
+      const lines = (p.lines || []).map(line => line.replace('{controller}', controller));
+      els.privacy.innerHTML = lines.map(txt => `<p>${txt}</p>`).join('');
     }
+
+    // Summaries
+    if (els.imprintSummary && state.content?.ui?.imprintSummary) els.imprintSummary.textContent = state.content.ui.imprintSummary;
+    if (els.privacySummary && state.content?.ui?.privacySummary) els.privacySummary.textContent = state.content.ui.privacySummary;
   }
 
   function updateLangButtons() {
     els.langDe.setAttribute('aria-pressed', String(state.locale === 'de'));
     els.langEn.setAttribute('aria-pressed', String(state.locale === 'en'));
+  }
+
+  function applyUIStrings() {
+    const ui = state.content?.ui || {};
+    // document title and site header title
+    const siteTitle = ui.siteTitle || state.config?.siteTitle;
+    if (siteTitle) {
+      document.title = siteTitle;
+      if (els.siteTitle) els.siteTitle.textContent = siteTitle;
+      const ogt = document.querySelector('meta[property="og:title"]');
+      if (ogt) ogt.setAttribute('content', siteTitle);
+    }
+    if (ui.metaDescription) {
+      const md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute('content', ui.metaDescription);
+      const ogd = document.querySelector('meta[property="og:description"]');
+      if (ogd) ogd.setAttribute('content', ui.metaDescription);
+    }
+    if (els.skipLink && ui.skipLink) els.skipLink.textContent = ui.skipLink;
+    if (els.langNav && ui.langNavLabel) els.langNav.setAttribute('aria-label', ui.langNavLabel);
+    if (els.aboutTitle && ui.titles?.about) els.aboutTitle.textContent = ui.titles.about;
+    if (els.memoriesTitle && ui.titles?.memories) els.memoriesTitle.textContent = ui.titles.memories;
+    if (els.shareBtn && ui.share) els.shareBtn.textContent = ui.share;
+    // aria labels
+    if (ui.aria) {
+      const aq = document.getElementById('about-quotes');
+      if (aq && ui.aria.aboutQuotes) aq.setAttribute('aria-label', ui.aria.aboutQuotes);
+      if (els.gallery && ui.aria.gallery) els.gallery.setAttribute('aria-label', ui.aria.gallery);
+      if (els.testimonials && ui.aria.testimonials) els.testimonials.setAttribute('aria-label', ui.aria.testimonials);
+    }
   }
 
   async function loadContentForLocale(locale) {
@@ -288,7 +354,7 @@
     // share functionality
     els.shareBtn.addEventListener('click', async () => {
       const shareData = {
-        title: state.config?.siteTitle || document.title,
+        title: (state.content?.ui?.siteTitle) || state.config?.siteTitle || document.title,
         text: state.content?.hero?.tagline || '',
         url: location.href
       };
@@ -297,17 +363,21 @@
       } else {
         try {
           await navigator.clipboard.writeText(location.href);
-          els.shareBtn.textContent = state.locale === 'en' ? 'Link copied' : 'Link kopiert';
-          setTimeout(() => { els.shareBtn.textContent = state.locale === 'en' ? 'Share' : 'Teilen'; }, 2000);
+          const ui = state.content?.ui || {};
+          const copied = ui.shareCopied || 'Link copied';
+          const label = ui.share || 'Share';
+          els.shareBtn.textContent = copied;
+          setTimeout(() => { els.shareBtn.textContent = label; }, 2000);
         } catch {
-          window.prompt('URL kopieren:', location.href);
+          window.prompt((state.content?.ui?.copyUrlPrompt || 'Copy URL:'), location.href);
         }
       }
     });
   }
 
   function renderAll() {
-    document.title = state.config?.siteTitle || document.title;
+    // titles and meta from content.ui if present
+    applyUIStrings();
     setTheme(state.config?.theme);
     renderHero();
     renderProgress();
@@ -328,9 +398,7 @@
       await loadContentForLocale(state.locale);
 
       // set site title from config
-      if (state.config.siteTitle) {
-        els.siteTitle.textContent = state.config.siteTitle;
-      }
+      // prefer content.ui.siteTitle; fallback to config handled in applyUIStrings
 
       attachInteractions();
       renderAll();

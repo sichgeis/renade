@@ -26,12 +26,12 @@
   </noscript>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a id="skip-link" class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="site-header" role="banner">
     <div class="container">
       <h1 id="siteTitle">Für Renade – Solidarität und Gedenken</h1>
-      <nav aria-label="Sprachwahl">
+      <nav id="lang-nav" aria-label="Sprachwahl">
         <button id="lang-de" class="lang-btn" data-lang="de" aria-pressed="true">DE</button>
         <button id="lang-en" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       </nav>
@@ -90,19 +90,19 @@
 
         <div id="donate-options" class="donate-options">
           <div id="bank" class="donate-card" hidden>
-            <h3>Banküberweisung</h3>
-            <p><strong>Kontoinhaber: </strong><span id="bank-accountName"></span></p>
-            <p><strong>IBAN: </strong><span id="bank-iban"></span></p>
-            <p><strong>BIC: </strong><span id="bank-bic"></span></p>
-            <p><strong>Verwendungszweck: </strong><span id="bank-reference"></span></p>
+            <h3 id="bank-title">Banküberweisung</h3>
+            <p><strong id="bank-accountHolderLabel">Kontoinhaber: </strong><span id="bank-accountName"></span></p>
+            <p><strong id="bank-ibanLabel">IBAN: </strong><span id="bank-iban"></span></p>
+            <p><strong id="bank-bicLabel">BIC: </strong><span id="bank-bic"></span></p>
+            <p><strong id="bank-referenceLabel">Verwendungszweck: </strong><span id="bank-reference"></span></p>
           </div>
           <div id="paypal" class="donate-card" hidden>
-            <h3>PayPal</h3>
+            <h3 id="paypal-title">PayPal</h3>
             <p><a id="paypal-url" class="btn btn-primary" href="#" rel="noopener" target="_blank">Zu PayPal</a></p>
             <p id="paypal-note" class="muted"></p>
           </div>
           <div id="cashDrop" class="donate-card" hidden>
-            <h3>Bar/Briefumschlag</h3>
+            <h3 id="cash-title">Bar/Briefumschlag</h3>
             <p id="cash-desc"></p>
             <p id="cash-address" class="muted"></p>
           </div>
@@ -141,11 +141,11 @@
       <p id="footer-hashtag" class="muted"></p>
 
       <details>
-        <summary>Impressum</summary>
+        <summary id="imprint-summary">Impressum</summary>
         <div id="imprint"></div>
       </details>
       <details>
-        <summary>Datenschutz</summary>
+        <summary id="privacy-summary">Datenschutz</summary>
         <div id="privacy"></div>
       </details>
     </div>
@@ -153,7 +153,7 @@
 
   <script src="assets/js/main.js" defer></script>
   <noscript>
-    <div class="noscript container">
+    <div class="noscript container" id="noscript-msg">
       Diese Seite funktioniert auch ohne JavaScript, zeigt jedoch erweiterte Inhalte (Fortschritt, i18n, Teilen) mit JavaScript an.
     </div>
   </noscript>
