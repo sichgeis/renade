@@ -53,18 +53,41 @@
   "about": {
     "text": "Renade stood for solidarity, justice and warmth. She was active in the community and left traces of togetherness. This page collects memories, informs and invites support.",
     "quotes": [
-      { "author": "Friend", "text": "Renade showed me what it means to be there for each other." },
+      {
+        "author": "Friend",
+        "text": "Renade showed me what it means to be there for each other."
+      },
       { "author": "Companion", "text": "Her smile made rooms brighter." }
     ]
   },
   "memories": {
     "gallery": [
-      { "src": "assets/img/1.jpg", "alt": "Renade smiling", "caption": "A sunny day." },
-      { "src": "assets/img/2.jpg", "alt": "Renade at an action", "caption": "Engagement on site." },
-      { "src": "assets/img/3.jpg", "alt": "Flowers", "caption": "In remembrance." }
+      {
+        "src": "assets/img/1.jpg",
+        "alt": "Renade smiling",
+        "caption": "A sunny day."
+      },
+      {
+        "src": "assets/img/2.jpg",
+        "alt": "Renade at an action",
+        "caption": "Engagement on site."
+      },
+      {
+        "src": "assets/img/3.jpg",
+        "alt": "Flowers",
+        "caption": "In remembrance."
+      },
+      {
+        "src": "assets/img/4.jpg",
+        "alt": "Blumen",
+        "caption": "In Erinnerung."
+      }
     ],
     "testimonials": [
-      { "name": "A.", "text": "Thank you for your support in difficult times." },
+      {
+        "name": "A.",
+        "text": "Thank you for your support in difficult times."
+      },
       { "name": "K.", "text": "Your clarity and warmth remain." },
       { "name": "", "text": "Thinking of you." }
     ],
@@ -82,13 +105,28 @@
     "paypalNote": "Please use Friends & Family if possible."
   },
   "events": [
-    { "title": "Memorial gathering", "date": "", "location": "", "details": "", "link": "" }
+    {
+      "title": "Memorial gathering",
+      "date": "",
+      "location": "",
+      "details": "",
+      "link": ""
+    }
   ],
   "faq": [
-    { "q": "How can I donate?", "a": "By bank transfer, PayPal or cash as listed above." },
-    { "q": "What happens with any surplus?", "a": "It goes to social projects Renade was active in." },
+    {
+      "q": "How can I donate?",
+      "a": "By bank transfer, PayPal or cash as listed above."
+    },
+    {
+      "q": "What happens with any surplus?",
+      "a": "It goes to social projects Renade was active in."
+    },
     { "q": "Who is responsible for the site?", "a": "Peter (see imprint)." },
-    { "q": "Is any data collected?", "a": "No. No cookies, no tracking, no forms." }
+    {
+      "q": "Is any data collected?",
+      "a": "No. No cookies, no tracking, no forms."
+    }
   ],
   "contact": { "note": "For submissions and questions: haaa@posteo.de" },
   "footer": { "credits": "Responsible: Peter", "hashtag": "#renade" }
