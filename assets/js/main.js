@@ -54,8 +54,7 @@
     privacy: document.getElementById('privacy'),
     imprintSummary: document.getElementById('imprint-summary'),
     privacySummary: document.getElementById('privacy-summary'),
-    langDe: document.getElementById('lang-de'),
-    langEn: document.getElementById('lang-en'),
+    langToggle: document.getElementById('lang-toggle'),
     shareBtn: document.getElementById('share-btn')
   };
 
@@ -289,9 +288,10 @@
     if (els.privacySummary && state.content?.ui?.privacySummary) els.privacySummary.textContent = state.content.ui.privacySummary;
   }
 
-  function updateLangButtons() {
-    els.langDe.setAttribute('aria-pressed', String(state.locale === 'de'));
-    els.langEn.setAttribute('aria-pressed', String(state.locale === 'en'));
+  function updateLangToggle() {
+    if (!els.langToggle) return;
+    els.langToggle.textContent = (state.locale || 'de').toUpperCase();
+    els.langToggle.setAttribute('aria-label', state.content?.ui ? (state.content.ui.langToggleAria || (state.locale === 'en' ? 'Switch language' : 'Sprache wechseln')) : (state.locale === 'en' ? 'Switch language' : 'Sprache wechseln'));
   }
 
   function applyUIStrings() {
@@ -322,6 +322,8 @@
       if (els.gallery && ui.aria.gallery) els.gallery.setAttribute('aria-label', ui.aria.gallery);
       if (els.testimonials && ui.aria.testimonials) els.testimonials.setAttribute('aria-label', ui.aria.testimonials);
     }
+    // ensure language toggle reflects current locale
+    updateLangToggle();
   }
 
   async function loadContentForLocale(locale) {
@@ -339,17 +341,19 @@
   }
 
   function attachInteractions() {
-    // language switching
-    [els.langDe, els.langEn].forEach(btn => btn.addEventListener('click', async (e) => {
-      const lang = e.currentTarget.getAttribute('data-lang');
-      if (state.locale === lang) return;
-      state.locale = lang;
-      localStorage.setItem('locale', state.locale);
-      await loadContentForLocale(state.locale);
-      renderAll();
-      updateLangButtons();
-      document.documentElement.lang = state.locale;
-    }));
+    // language toggle
+    if (els.langToggle) {
+      els.langToggle.addEventListener('click', async () => {
+        const next = state.locale === 'de' ? 'en' : 'de';
+        if (state.locale === next) return;
+        state.locale = next;
+        localStorage.setItem('locale', state.locale);
+        document.documentElement.lang = state.locale;
+        await loadContentForLocale(state.locale);
+        renderAll();
+        updateLangToggle();
+      });
+    }
 
     // share functionality
     els.shareBtn.addEventListener('click', async () => {
