@@ -39,7 +39,6 @@
     "privacy": {
       "lines": [
         "No personal data is collected, no cookies are set, no tracking is used. No external fonts. Optional CDN is not used.",
-        "Controller: {controller}.",
         "If you contact us by e-mail, data is processed by the mail provider."
       ]
     },
@@ -122,12 +121,12 @@
       "q": "What happens with any surplus?",
       "a": "It goes to social projects Renade was active in."
     },
-    { "q": "Who is responsible for the site?", "a": "Peter (see imprint)." },
+    { "q": "Who is responsible for the site?", "a": "Christian and Lumi." },
     {
       "q": "Is any data collected?",
       "a": "No. No cookies, no tracking, no forms."
     }
   ],
   "contact": { "note": "For submissions and questions: haaa@posteo.de" },
-  "footer": { "credits": "Responsible: Peter", "hashtag": "#renade" }
+  "footer": { "hashtag": "#renade" }
 }

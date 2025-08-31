@@ -8,7 +8,7 @@
     "raised": 0,
     "bank": {
       "enabled": true,
-      "accountName": "Peter [Nachname]",
+      "accountName": "Peter XXX",
       "iban": "DE00 0000 0000 0000 0000 00",
       "bic": "XXXXDEXX",
       "reference": "Soli Renade"
@@ -28,12 +28,12 @@
     "email": "haaa@posteo.de",
     "responsibleName": "Peter",
     "imprint": {
-      "name": "Peter [Nachname]",
-      "address": "[Adresse einfügen]",
+      "name": "Christian Geisler",
+      "address": "Goethe-Allee 5",
       "email": "haaa@posteo.de"
     },
     "privacy": {
-      "controller": "Peter [Nachname]"
+      "controller": "Christian Geisler"
     }
   },
   "theme": {

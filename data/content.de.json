@@ -38,8 +38,7 @@
     "privacySummary": "Datenschutz",
     "privacy": {
       "lines": [
-        "Es werden keine personenbezogenen Daten erhoben, keine Cookies gesetzt, kein Tracking verwendet. Keine externen Fonts. Optionales CDN wird nicht genutzt.",
-        "Verantwortliche Stelle: {controller}.",
+        "Es werden keine personenbezogenen Daten erhoben, keine Cookies gesetzt, kein Tracking verwendet.",
         "Bei Kontakt per E-Mail werden die Daten durch den Mail-Provider verarbeitet."
       ]
     },
@@ -125,7 +124,7 @@
       "q": "Was passiert mit einem Überhang?",
       "a": "Er geht an soziale Projekte, in denen Renade aktiv war."
     },
-    { "q": "Wer verantwortet die Seite?", "a": "Peter (siehe Impressum)." },
+    { "q": "Wer verantwortet die Seite?", "a": "Christian and Lumi" },
     {
       "q": "Werden Daten erhoben?",
       "a": "Nein. Keine Cookies, kein Tracking, keine Formulare."
@@ -135,7 +134,6 @@
     "note": "Für Einsendungen und Fragen: haaa@posteo.de"
   },
   "footer": {
-    "credits": "In Verantwortung: Peter",
     "hashtag": "#renade"
   }
 }
