@@ -214,7 +214,7 @@
     "transparency": "Für Renade sammeln wir aktuell 4.000–5.000€, um ihr einen würdevollen Abschied zu ermöglichen. Die genauen Kosten stehen noch nicht fest, doch jeder gespendete Euro wird ausschließlich für die Bestattung und das Gedenken verwendet. Renades innigster Wunsch war es, im Friedwald an der Burg Plesse, neben ihrer Freundin Lena bestattet zu werden – das möchten wir ihr ermöglichen. Sollte ein möglicher Überschuss entstehen, werden die verbleibenden Mittel an die Projekte weitergegeben, in denen Renade selbst aktiv war und die ihr von Herzen wichtig sind. Jeder Beitrag, ob groß oder klein, hilft, Renades Wunsch zu erfüllen und ihr Andenken zu ehren.",
     "costBreakdown": [],
     "paypalNote": "Spendenseite für Renade bei Paypal.",
-    "cashDescription": "Bitte sprecht uns an, wenn du etwas Geld in die Spendendose legen möchtest. Das geht beim ThOP, der Soli-Küche, der Mittwochs-Küche und anderen Veranstaltungen. Wir stimmen die genauen Details dazu gerade ab und werden diese hier veröffentlichen."
+    "cashDescription": "Bitte sprecht uns an, wenn du etwas Geld in die Spendendose legen möchtest. Das geht beim ThOP, der Soli-Küche (2.9. ab 18:30h), der Mittwochs-Küche (3.9. ab 17h in der OM10) und anderen Veranstaltungen. Wir stimmen die genauen Details dazu gerade ab und werden diese hier veröffentlichen."
   },
   "events": [
     {
@@ -230,6 +230,27 @@
       "location": "OM10",
       "details": "Jubiläumskonzert mit Spendendose für Renade.",
       "link": "https://omzehn.noblogs.org"
+    },
+    {
+      "title": "Soli-Küche JuZI",
+      "date": "02.09 18:30h",
+      "location": "JuZI",
+      "details": "Spendendose für Renade beim der Soli-Küche.",
+      "link": ""
+    },
+    {
+      "title": "Mittwochsküche OM10",
+      "date": "03.09 17h",
+      "location": "OM10",
+      "details": "Spendendose für Renade beim Mittwochskochen.",
+      "link": ""
+    },
+    {
+      "title": "Abschiednahme von Renate vor der Einäscherung",
+      "date": "03.09 12:30h",
+      "location": "Friedhof am Junkerberg",
+      "details": "Die Abschiednahme von Renate vor der Einäscherung erfolgt am Mittwoch um 12:30 Uhr am Friedhof am Junkerberg.",
+      "link": ""
     },
     {
       "title": "Soli-Party (in Planung)",
