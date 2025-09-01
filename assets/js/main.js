@@ -385,7 +385,6 @@
         const next = state.locale === "de" ? "en" : "de";
         if (state.locale === next) return;
         state.locale = next;
-        localStorage.setItem("locale", state.locale);
         document.documentElement.lang = state.locale;
         await loadContentForLocale(state.locale);
         renderAll();
@@ -443,13 +442,8 @@
   async function init() {
     try {
       state.config = await loadJSON("data/config.json");
-      // locale detection order: saved -> navigator -> default
-      state.locale =
-        localStorage.getItem("locale") ||
-        detectLocale(
-          state.config.locales || ["de", "en"],
-          state.config.defaultLocale || "de"
-        );
+      // Always start in German regardless of previous selection or browser settings
+      state.locale = "de";
       document.documentElement.lang = state.locale;
       await loadContentForLocale(state.locale);
 
