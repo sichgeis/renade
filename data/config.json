@@ -14,9 +14,9 @@
       "reference": "Soli Renade"
     },
     "paypal": {
-      "enabled": false,
-      "url": "https://paypal.me/BEISPIEL",
-      "note": "Bitte Friends & Family, wenn möglich."
+      "enabled": true,
+      "url": "https://www.paypal.com/pools/c/9hVmJQn0DO",
+      "note": "Paypal Spendenseite."
     },
     "cashDrop": {
       "enabled": false,
