@@ -19,9 +19,9 @@
       "note": "Paypal Spendenseite."
     },
     "cashDrop": {
-      "enabled": false,
-      "description": "Briefumschlag in Postkasten",
-      "address": ""
+      "enabled": true,
+      "description": "Bitte sprecht uns an, wenn du etwas Geld in die Spendendose legen möchtest. Das geht beim ThOP, der Soli-Küche, der Mittwochs-Küche und anderen Veranstaltungen. Wir stimmen die genauen Details dazu gerade ab und werden diese hier veröffentlichen.",
+      "address": "JuZi, ThOP, OM10, ..."
     }
   },
   "contact": {
