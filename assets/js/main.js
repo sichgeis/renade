@@ -229,7 +229,10 @@
       els.cash.hidden = false;
       if (els.cashTitle && state.content?.ui?.donate?.cashTitle)
         els.cashTitle.textContent = state.content.ui.donate.cashTitle;
-      els.cashDesc.textContent = cfg.cashDrop.description || "";
+      els.cashDesc.textContent =
+        state.content?.donate?.cashDescription ||
+        cfg.cashDrop.description ||
+        "";
       els.cashAddress.textContent = cfg.cashDrop.address || "";
     } else {
       els.cash.hidden = true;
