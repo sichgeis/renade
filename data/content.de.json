@@ -218,11 +218,18 @@
   },
   "events": [
     {
-      "title": "Noch nicht final",
+      "title": "Diese Liste ist noch nicht vollständig ...",
       "date": "",
       "location": "",
       "details": "",
       "link": ""
+    },
+    {
+      "title": "Tour 2025 | 10 Jahre KRAFETZKA",
+      "date": "01.09 19h",
+      "location": "OM10",
+      "details": "Jubiläumskonzert mit Spendendose für Renade.",
+      "link": "https://omzehn.noblogs.org"
     },
     {
       "title": "Soli-Party (in Planung)",
