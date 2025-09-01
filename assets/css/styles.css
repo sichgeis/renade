@@ -7,6 +7,7 @@
   --color-muted: #5b5b5b;
   --radius: 12px;
   --space: 16px;
+  --space2: 32px;
   --maxw: 960px;
 }
 
@@ -202,8 +203,6 @@ h3 {
   }
 }
 
-
-
 .quotes {
   list-style: none;
   padding: 0;
@@ -222,6 +221,12 @@ h3 {
 .quotes blockquote {
   white-space: pre-line;
   margin: 0;
+}
+
+/* Preserve line breaks in about text coming from JSON */
+#about-text {
+  white-space: pre-line;
+  margin-bottom: var(--space2);
 }
 
 .gallery {
