@@ -314,7 +314,10 @@
 
   function updateLangToggle() {
     if (!els.langToggle) return;
-    els.langToggle.textContent = (state.locale || "de").toUpperCase();
+    const toggleText = state.locale === "en"
+      ? "Sprache auf Deutsch ändern"
+      : "Change the language to english";
+    els.langToggle.textContent = toggleText;
     els.langToggle.setAttribute(
       "aria-label",
       state.content?.ui
