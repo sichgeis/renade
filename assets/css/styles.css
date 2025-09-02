@@ -340,8 +340,8 @@ html.no-scroll {
   top: 50%;
   transform: translateY(-50%);
 }
-.lightbox__nav--prev { left: -44px; }
-.lightbox__nav--next { right: -44px; }
+.lightbox__nav--prev { left: calc(-44px - var(--space)); }
+.lightbox__nav--next { right: calc(-44px - var(--space)); }
 @media (max-width: 640px) {
   .lightbox__nav--prev { left: 8px; }
   .lightbox__nav--next { right: 8px; }
