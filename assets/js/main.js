@@ -4,6 +4,12 @@
     config: null,
     content: null,
     locale: "de",
+    galleryData: [],
+    lightbox: {
+      el: null,
+      idx: 0,
+      lastFocus: null,
+    },
   };
 
   const els = {
@@ -135,15 +141,28 @@
     document.getElementById("memories").hidden =
       gallery.length === 0 && testimonials.length === 0;
 
+    // keep a copy for lightbox navigation
+    state.galleryData = gallery;
+
+    // render clickable items for lightbox
     els.gallery.innerHTML = "";
-    gallery.forEach((item) => {
+    gallery.forEach((item, i) => {
       const fig = document.createElement("figure");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "gallery-item-btn";
+      btn.dataset.index = String(i);
+      btn.style.cursor = "zoom-in";
+      btn.setAttribute("aria-label", (item.alt || "") + "; open image");
+      btn.addEventListener("click", () => openLightbox(i));
+
       const img = document.createElement("img");
       img.src = item.src;
       img.alt = item.alt || "";
       img.loading = "lazy";
       img.decoding = "async";
-      fig.appendChild(img);
+      btn.appendChild(img);
+      fig.appendChild(btn);
       if (item.caption) {
         const cap = document.createElement("figcaption");
         cap.textContent = item.caption;
@@ -151,6 +170,25 @@
       }
       els.gallery.appendChild(fig);
     });
+
+    // Event delegation as a safety net (in case button listeners are disrupted)
+    if (!els.gallery.dataset.delegateAttached) {
+      els.gallery.addEventListener(
+        "click",
+        (e) => {
+          const target = e.target;
+          if (!(target instanceof Element)) return;
+          // if click on img inside a button
+          const btn = target.closest(".gallery-item-btn");
+          if (btn && btn instanceof HTMLElement && btn.dataset.index) {
+            const idx = parseInt(btn.dataset.index, 10);
+            if (!Number.isNaN(idx)) openLightbox(idx);
+          }
+        },
+        { passive: true }
+      );
+      els.gallery.dataset.delegateAttached = "true";
+    }
 
     els.testimonials.innerHTML = "";
     testimonials.forEach((t) => {
@@ -167,6 +205,128 @@
       mail
     )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     els.submitMail.textContent = state.content?.memories?.submissionNote || "";
+  }
+
+  // --- Lightbox implementation ---
+  function ensureLightbox() {
+    if (state.lightbox.el) return state.lightbox.el;
+    const overlay = document.createElement("div");
+    overlay.className = "lightbox";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-hidden", "true");
+    overlay.style.cursor = "zoom-out";
+
+    const dialog = document.createElement("div");
+    dialog.className = "lightbox__dialog";
+    dialog.setAttribute("tabindex", "-1");
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "lightbox__close";
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Close");
+    closeBtn.textContent = "✕";
+    closeBtn.addEventListener("click", closeLightbox);
+
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "lightbox__nav lightbox__nav--prev";
+    prevBtn.type = "button";
+    prevBtn.setAttribute("aria-label", "Previous image");
+    prevBtn.textContent = "‹";
+    prevBtn.addEventListener("click", showPrev);
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "lightbox__nav lightbox__nav--next";
+    nextBtn.type = "button";
+    nextBtn.setAttribute("aria-label", "Next image");
+    nextBtn.textContent = "›";
+    nextBtn.addEventListener("click", showNext);
+
+    const img = document.createElement("img");
+    img.className = "lightbox__img";
+    img.alt = "";
+
+    const caption = document.createElement("div");
+    caption.className = "lightbox__caption";
+
+    dialog.appendChild(closeBtn);
+    dialog.appendChild(prevBtn);
+    dialog.appendChild(nextBtn);
+    dialog.appendChild(img);
+    dialog.appendChild(caption);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+
+    // click outside dialog closes
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    state.lightbox.el = overlay;
+    return overlay;
+  }
+
+  function updateLightbox() {
+    const idx = state.lightbox.idx;
+    const item = state.galleryData[idx];
+    if (!item) return;
+    const overlay = ensureLightbox();
+    const img = overlay.querySelector(".lightbox__img");
+    const cap = overlay.querySelector(".lightbox__caption");
+    img.src = item.src;
+    img.alt = item.alt || "";
+    cap.textContent = item.caption || "";
+  }
+
+  function onKeydown(e) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeLightbox();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      showPrev();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      showNext();
+    }
+  }
+
+  function openLightbox(index) {
+    if (!state.galleryData.length) return;
+    const overlay = ensureLightbox();
+    state.lightbox.idx = index;
+    state.lightbox.lastFocus = document.activeElement;
+    try { console.debug("Lightbox open", { index, item: state.galleryData[index] }); } catch {}
+    updateLightbox();
+    overlay.setAttribute("aria-hidden", "false");
+    document.addEventListener("keydown", onKeydown);
+    // lock background scroll (simpler & robust)
+    document.documentElement.classList.add("no-scroll");
+    // focus the dialog for screen readers and to capture keys
+    overlay.querySelector(".lightbox__dialog").focus();
+  }
+
+  function closeLightbox() {
+    if (!state.lightbox.el) return;
+    state.lightbox.el.setAttribute("aria-hidden", "true");
+    document.removeEventListener("keydown", onKeydown);
+    if (state.lightbox.lastFocus && typeof state.lightbox.lastFocus.focus === "function") {
+      state.lightbox.lastFocus.focus();
+    }
+    // restore background scroll
+    document.documentElement.classList.remove("no-scroll");
+  }
+
+  function showPrev() {
+    if (!state.galleryData.length) return;
+    state.lightbox.idx = (state.lightbox.idx - 1 + state.galleryData.length) % state.galleryData.length;
+    updateLightbox();
+  }
+
+  function showNext() {
+    if (!state.galleryData.length) return;
+    state.lightbox.idx = (state.lightbox.idx + 1) % state.galleryData.length;
+    updateLightbox();
   }
 
   function renderDonate() {
