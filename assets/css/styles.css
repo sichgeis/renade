@@ -223,10 +223,26 @@ h3 {
   margin: 0;
 }
 
-/* Preserve line breaks in about text coming from JSON */
-#about-text {
+  /* Preserve line breaks in about text coming from JSON */
+  #about-text {
+    white-space: pre-line;
+    margin-bottom: var(--space2);
+  }
+
+  /* Preserve line breaks in announcement text coming from JSON */
+.announcement-text {
   white-space: pre-line;
-  margin-bottom: var(--space2);
+}
+
+/* Add visual separation between paragraphs in announcement */
+.announcement-text p {
+  margin-bottom: 1em;
+}
+
+/* Style the announcement section to stand out */
+.section-announcement {
+  background-color: var(--color-primary-soft);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 /* Global scroll lock when overlays are open */

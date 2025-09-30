@@ -16,6 +16,8 @@
     siteTitle: document.getElementById("siteTitle"),
     skipLink: document.getElementById("skip-link"),
     langNav: document.getElementById("lang-nav"),
+    announcementTitle: document.getElementById("announcement-title"),
+    announcementText: document.getElementById("announcement-text"),
     heroName: document.getElementById("hero-name"),
     heroLifespan: document.getElementById("hero-lifespan"),
     heroTagline: document.getElementById("hero-tagline"),
@@ -110,6 +112,32 @@
     const heroImg = document.getElementById("hero-image");
     if (heroImg && state.content?.ui?.heroImageAlt)
       heroImg.alt = state.content.ui.heroImageAlt;
+  }
+
+  function renderAnnouncement() {
+    const ann = state.content?.announcement;
+    const section = document.getElementById("announcement");
+    if (!section) return;
+    const text = ann?.text && typeof ann.text === "string" ? ann.text.trim() : "";
+    section.hidden = !text;
+    if (!section.hidden && els.announcementText) {
+      if (els.announcementTitle && ann?.title) {
+        els.announcementTitle.textContent = ann.title;
+      }
+      
+      // Convert text with newlines to HTML paragraphs
+      if (text) {
+        els.announcementText.innerHTML = "";
+        const paragraphs = text.split("\n\n");
+        paragraphs.forEach(paragraph => {
+          if (paragraph.trim()) {
+            const p = document.createElement("p");
+            p.textContent = paragraph.trim();
+            els.announcementText.appendChild(p);
+          }
+        });
+      }
+    }
   }
 
   function renderAbout() {
@@ -596,6 +624,7 @@
     // titles and meta from content.ui if present
     applyUIStrings();
     setTheme(state.config?.theme);
+    renderAnnouncement();
     renderHero();
     renderAbout();
     renderMemories();
