@@ -6,10 +6,10 @@
   },
   "ui": {
     "siteTitle": "For Renade — Solidarity and Remembrance",
-    "metaDescription": "With love, solidarity and gratitude — information, memories and donations for Renade.",
+    "metaDescription": "With love, solidarity and gratitude — information and memories for Renade.",
     "skipLink": "Skip to content",
     "langNavLabel": "Language selection",
-    "donateCta": "Donate now",
+    "donateCta": "Share memories",
     "heroImageAlt": "Portrait photo of Renade",
     "titles": {
       "about": "About Renade",
@@ -50,7 +50,7 @@
     "copyUrlPrompt": "Copy URL:"
   },
   "about": {
-    "text": "Renade stood for solidarity, justice, and warmth.\n\nOn 28.08.2025 at around 2:16 a.m., she passed away peacefully — surrounded by dear people.\n\nThis page gathers memories, provides information about remembrance, and invites your solidarity.\n\nUpdate: The fundraising goal has been reached. Further donations are still welcome and will go to projects that Renade was active in and that were close to her heart. The collected funds enable her burial in the forest cemetery (Friedwald) at Burg Plesse — at Renade’s chosen resting place next to her friend Lena.",
+    "text": "Renade stood for solidarity, justice, and warmth.\n\nOn 28.08.2025 at around 2:16 a.m., she passed away peacefully — surrounded by dear people.\n\nThis page gathers memories and shares ways of remembering her.\n\nThe fundraising phase has now ended. Thanks to great solidarity, a dignified burial in the forest cemetery (Friedwald) at Burg Plesse — at Renade’s chosen resting place next to her friend Lena — was made possible. A solidarity party is planned for February 2026.",
     "quotes": [
       {
         "author": "",
@@ -314,77 +314,28 @@
     "mailtoBody": "Hello,\n\nI would like to share a memory for Renade.\nName: ...\nShort text: ...\nPhotos: (optional)\n\nThank you."
   },
   "donate": {
-    "transparency": "Update: The fundraising goal has been reached (€5,945). Further donations are welcome and will go to projects that Renade was active in and that were close to her heart. — We collected more than €5,000 to enable a dignified farewell. Every donated extra euro is used carefully: first for the burial in the forest cemetery at Burg Plesse at Renade’s chosen resting place next to her friend Lena; funds beyond that go to the mentioned projects.",
+    "transparency": "The fundraising phase has ended. Thanks to many people, a dignified burial in the forest cemetery at Burg Plesse could be made possible.",
     "costBreakdown": [],
-    "paypalNote": "Fundraising pool.",
-    "cashDescription": "Please talk to us if you would like to put some money in the donation box. You can do this at ThOP, the Wednesday kitchen of Forum Waageplatz (03.09 from 17h at OM10), at the Weltladen, and at other events."
+    "paypalNote": "",
+    "cashDescription": ""
   },
   "events": [
     {
-      "title": "This list is under construction - more info later",
-      "date": "",
-      "location": "",
-      "details": "",
-      "link": ""
-    },
-    {
-      "title": "Memorial table at ThOP",
-      "date": "from now on",
-      "location": "ThOP",
-      "details": "The ensemble of 'Lady Windermere’s Fan' has set up a memorial table at ThOP. You can leave a few kind words there.",
-      "link": ""
-    },
-    {
-      "title": "Tour 2025 | 10 Jahre KRAFETZKA",
-      "date": "01.09 19h",
-      "location": "OM10",
-      "details": "Jubiläumskonzert with Spendendose for Renade.",
-      "link": "https://omzehn.noblogs.org"
-    },
-    {
-      "title": "Wednesday kitchen OM10",
-      "date": "03.09 17h",
-      "location": "OM10",
-      "details": "Spendendose for Renade during the Wednesday kitchen.",
-      "link": ""
-    },
-    {
-      "title": "Farewell ceremony",
-      "date": "03.09 12:30h",
-      "location": "Friedhof am Junkerberg",
-      "details": "The farewell ceremony takes place at the Junkerberg cemetery at 12:30 pm.",
-      "link": ""
-    },
-    {
-      "title": "Farewell ceremony at ThOP",
-      "date": "14.09 16h",
-      "location": "ThOP",
-      "details": "Entry at 16h",
-      "link": "https://www.theater-im-op.de/2025/08/30/ein-leises-und-ein-lautes-danke/"
-    },
-    {
-      "title": "Interment in the FriedWald",
-      "date": "04.10 (Sat) 3 pm",
-      "location": "FriedWald Burg Plesse",
-      "details": "Interment at the FriedWald forest cemetery at Plesse Castle with a shuttle service from the ThOP. We are organizing a shuttle from the ThOP to the FriedWald. We ask everyone arriving by car who has a free seat to take others from the ThOP along. If you would like a ride or can offer one, please come to the ThOP at 2 pm and, if possible, let us know beforehand at `pietwitt98@gmail.com`. By the way: Forestry roads may be driven on up to the gravesite for people with mobility impairments.",
-      "link": "https://www.friedwald.de/waldbestattung-burg-plesse"
-    },
-    {
-      "title": "Solidarity party (planning)",
-      "date": "More info later",
-      "location": "",
-      "details": "A group is forming to organize it; date and venue to follow.",
+      "title": "Solidarity party for Renade",
+      "date": "February 2026 (exact date to follow)",
+      "location": "to be announced",
+      "details": "A solidarity party is planned for February 2026. Further information will be added here as soon as the venue and date are fixed.",
       "link": ""
     }
   ],
   "faq": [
     {
-      "q": "How can I donate?",
-      "a": "By bank transfer, PayPal or cash as listed above."
+      "q": "What is this page?",
+      "a": "This page is a remembrance space for Renade. It collects photos, words and impressions from people who were connected to her."
     },
     {
-      "q": "What happens with any surplus?",
-      "a": "It goes to social projects Renade was active in."
+      "q": "Are there upcoming events?",
+      "a": "A solidarity party is planned for February 2026. The venue and exact date will be added here once they are confirmed."
     },
     { "q": "Who is responsible for the site?", "a": "Christian and Lumi." },
     {

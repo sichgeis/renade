@@ -6,10 +6,10 @@
   },
   "ui": {
     "siteTitle": "Für Renade – Solidarität und Gedenken",
-    "metaDescription": "In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.",
+    "metaDescription": "In Liebe, Solidarität und Dankbarkeit – Informationen und Erinnerungen für Renade.",
     "skipLink": "Zum Inhalt springen",
     "langNavLabel": "Sprachwahl",
-    "donateCta": "Jetzt spenden",
+    "donateCta": "Erinnerungen teilen",
     "heroImageAlt": "Porträtfoto von Renade",
     "titles": {
       "about": "Über Renade",
@@ -50,7 +50,7 @@
     "copyUrlPrompt": "URL kopieren:"
   },
   "about": {
-    "text": "Renade stand für Solidarität, Gerechtigkeit und Wärme.\n\nAm 28.08.2025 ist sie gegen 2:16 Uhr friedlich von uns gegangen – umgeben von lieben Menschen.\n\nDiese Seite sammelt Erinnerungen, informiert über Gedenken und lädt zur solidarischen Unterstützung ein.\n\nAktualisierung: Das Spendenziel wurde erreicht. Weitere Spenden sind weiterhin willkommen und fließen in Projekte, in denen Renade aktiv war und die ihr am Herzen lagen. Die gesammelten Mittel ermöglichen ihre Bestattung im Friedwald an der Burg Plesse – an Renades Wunschort neben ihrer Freundin Lena.",
+    "text": "Renade stand für Solidarität, Gerechtigkeit und Wärme.\n\nAm 28.08.2025 ist sie gegen 2:16 Uhr friedlich von uns gegangen – umgeben von lieben Menschen.\n\nDiese Seite sammelt Erinnerungen und informiert über Formen des Gedenkens an sie.\n\nDie Spendenphase ist inzwischen abgeschlossen. Dank der großen Solidarität konnte eine würdige Bestattung im Friedwald an der Burg Plesse – an Renades Wunschort neben ihrer Freundin Lena – ermöglicht werden. Eine Solidaritätsparty ist für Februar 2026 geplant.",
     "quotes": [
       {
         "author": "",
@@ -314,77 +314,28 @@
     "mailtoBody": "Hallo,\n\nich möchte eine Erinnerung für Renade teilen.\nName: ...\nKurztext: ...\nFotos: (optional)\n\nDanke."
   },
   "donate": {
-    "transparency": "Aktualisierung: Das Spendenziel wurde erreicht. Weitere Spenden sind willkommen und fließen in Projekte, in denen Renade aktiv war und die ihr am Herzen lagen. – Wir haben über 5.000 € gesammelt, um ihr einen würdevollen Abschied zu ermöglichen. Jeder zusätzliche gespendete Euro wird sorgfältig eingesetzt: Zuerst für die Bestattung im Friedwald an der Burg Plesse an Renades Wunschort neben ihrer Freundin Lena; darüber hinausgehende Mittel gehen an die genannten Projekte.",
+    "transparency": "Die Spendenphase ist abgeschlossen. Dank vieler Menschen konnte eine würdige Bestattung im Friedwald an der Burg Plesse ermöglicht werden.",
     "costBreakdown": [],
-    "paypalNote": "Spendenseite für Renade bei Paypal.",
-    "cashDescription": "Bitte sprecht uns an, wenn du etwas Geld in die Spendendose legen möchtest. Das geht beim ThOP, der Mittwochs-Küche des Forum-Waageplatz (3.9. ab 17h in der OM10), im Weltladen und bei anderen Veranstaltungen."
+    "paypalNote": "",
+    "cashDescription": ""
   },
   "events": [
     {
-      "title": "Diese Liste ist noch nicht vollständig ...",
-      "date": "",
-      "location": "",
-      "details": "",
-      "link": ""
-    },
-    {
-      "title": "Gedenktisch im ThOP",
-      "date": "ab sofort",
-      "location": "ThOP",
-      "details": "Das Ensemble von \"Lady Windermeres Fächer\" hat im ThOP einen Gedenktisch aufgestellt. Es besteht die Möglichkeit, ein paar liebe Worte dazulassen.",
-      "link": ""
-    },
-    {
-      "title": "Tour 2025 | 10 Jahre KRAFETZKA",
-      "date": "01.09 19h",
-      "location": "OM10",
-      "details": "Jubiläumskonzert mit Spendendose für Renade.",
-      "link": "https://omzehn.noblogs.org"
-    },
-    {
-      "title": "Mittwochsküche OM10",
-      "date": "03.09 17h",
-      "location": "OM10",
-      "details": "Spendendose für Renade beim Mittwochskochen.",
-      "link": ""
-    },
-    {
-      "title": "Abschiednahme von Renate vor der Einäscherung",
-      "date": "03.09 12:30h",
-      "location": "Friedhof am Junkerberg",
-      "details": "Die Abschiednahme von Renate vor der Einäscherung erfolgt am Mittwoch um 12:30 Uhr am Friedhof am Junkerberg.",
-      "link": ""
-    },
-    {
-      "title": "Trauerfeier im ThOP",
-      "date": "14.09 (So) 16–21 Uhr",
-      "location": "ThOP",
-      "details": "Gemeinsames Gedenken im ThOP. Offizieller Teil ab 16:30 Uhr. Beiträge (Redebeitrag/Musik) gern bis 10.09. an Christa: christa.thop@web.de. Ein Klavier steht auf der Bühne; Fotos sind willkommen.",
-      "link": "https://www.theater-im-op.de/2025/08/30/ein-leises-und-ein-lautes-danke/"
-    },
-    {
-      "title": "Beisetzung im FriedWald",
-      "date": "04.10 (Sa) 15 Uhr",
-      "location": "FriedWald Burg Plesse",
-      "details": "Beisetzung im Waldfriedhof FriedWald an der Burg Plesse und Shuttle-Service vom ThOP. Wir organisieren einen Shuttleservice vom ThOP zum FriedWald. Dazu bitten wir alle, die mit einem Auto anreisen und noch einen Platz frei haben Andere vom ThOP mitzunehmen. Wer mitfahren will oder jemanden mitnehmen kann, der kommt bitte zum ThOP um 14 Uhr und meldet sich ggf. vorher bei `pietwitt98@gmail.com`. Übrigens: Forstwege können für Menschen mit Gehbehinderung bis zur Grabstätte befahren werden.",
-      "link": "https://www.friedwald.de/waldbestattung-burg-plesse"
-    },
-    {
-      "title": "Soli-Party (in Planung)",
-      "date": "",
-      "location": "",
-      "details": "Es formiert sich eine Gruppe zur Organisation; Datum und Ort folgen.",
+      "title": "Solidaritätsparty für Renade",
+      "date": "Februar 2026 (genaues Datum folgt)",
+      "location": "wird noch bekanntgegeben",
+      "details": "Eine Solidaritätsparty ist für Februar 2026 in Planung. Weitere Infos folgen hier, sobald Ort und Datum feststehen.",
       "link": ""
     }
   ],
   "faq": [
     {
-      "q": "Wie kann ich spenden?",
-      "a": "Per Überweisung, PayPal oder bar laut Angaben oben."
+      "q": "Worum geht es auf dieser Seite?",
+      "a": "Diese Seite ist eine Erinnerungsseite für Renade. Sie sammelt Bilder, Worte und Eindrücke von Menschen, die mit ihr verbunden waren."
     },
     {
-      "q": "Was passiert mit einem Überhang?",
-      "a": "Er geht an soziale Projekte, in denen Renade aktiv war."
+      "q": "Gibt es kommende Veranstaltungen?",
+      "a": "Eine Solidaritätsparty ist für Februar 2026 geplant. Ort und genaues Datum werden hier ergänzt, sobald sie feststehen."
     },
     { "q": "Wer verantwortet die Seite?", "a": "Christian and Lumi" },
     {
