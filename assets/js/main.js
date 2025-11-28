@@ -296,7 +296,9 @@
     const overlay = ensureLightbox();
     state.lightbox.idx = index;
     state.lightbox.lastFocus = document.activeElement;
-    try { console.debug("Lightbox open", { index, item: state.galleryData[index] }); } catch {}
+    try {
+      console.debug("Lightbox open", { index, item: state.galleryData[index] });
+    } catch {}
     updateLightbox();
     overlay.setAttribute("aria-hidden", "false");
     document.addEventListener("keydown", onKeydown);
@@ -310,7 +312,10 @@
     if (!state.lightbox.el) return;
     state.lightbox.el.setAttribute("aria-hidden", "true");
     document.removeEventListener("keydown", onKeydown);
-    if (state.lightbox.lastFocus && typeof state.lightbox.lastFocus.focus === "function") {
+    if (
+      state.lightbox.lastFocus &&
+      typeof state.lightbox.lastFocus.focus === "function"
+    ) {
       state.lightbox.lastFocus.focus();
     }
     // restore background scroll
@@ -319,7 +324,9 @@
 
   function showPrev() {
     if (!state.galleryData.length) return;
-    state.lightbox.idx = (state.lightbox.idx - 1 + state.galleryData.length) % state.galleryData.length;
+    state.lightbox.idx =
+      (state.lightbox.idx - 1 + state.galleryData.length) %
+      state.galleryData.length;
     updateLightbox();
   }
 
@@ -330,9 +337,11 @@
   }
 
   function renderDonate() {
+    const donateSection = document.getElementById("donate");
+    if (!donateSection) return;
+
     const donate = state.content?.donate;
     const cfg = state.config?.donation;
-    const donateSection = document.getElementById("donate");
     donateSection.hidden = !donate && !cfg;
 
     if (els.donateTitle && state.content?.ui?.titles?.donate)
@@ -477,9 +486,10 @@
 
   function updateLangToggle() {
     if (!els.langToggle) return;
-    const toggleText = state.locale === "en"
-      ? "Sprache auf Deutsch ändern"
-      : "Change the language to english";
+    const toggleText =
+      state.locale === "en"
+        ? "Sprache auf Deutsch ändern"
+        : "Change the language to english";
     els.langToggle.textContent = toggleText;
     els.langToggle.setAttribute(
       "aria-label",
