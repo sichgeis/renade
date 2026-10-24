@@ -3,123 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Für Renade – Solidarität und Gedenken</title>
-  <meta name="description" content="In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.">
-  
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Für Renade – Solidarität und Gedenken">
-  <meta property="og:description" content="In Liebe, Solidarität und Dankbarkeit – Informationen, Erinnerungen und Spenden für Renade.">
+  <title>Für Renade – Danke für eure Solidarität</title>
+  <meta name="description" content="Die Spendenaktion ist abgeschlossen. Danke an alle, die geholfen haben. Erinnerungen an Renade.">
+  <meta property="og:title" content="Für Renade – Danke für eure Solidarität">
+  <meta property="og:description" content="Die Spendenaktion ist abgeschlossen. Danke an alle, die geholfen haben. Erinnerungen an Renade.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/social-share.png">
-  
+  <meta property="og:image" content="assets/img/1.jpg">
   <link rel="icon" href="assets/img/favicon.png">
-  
-  <!-- System font stack, no external fonts. -->
-  <link rel="preload" href="assets/css/styles.css" as="style">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <noscript>
-    <style>
-      /* Ensure content is readable without JS */
-      .js-only { display: none !important; }
-    </style>
-  </noscript>
+  <link rel="stylesheet" href="assets/css/styles.css?v=archive-20261024">
+  <script src="assets/js/main.js?v=archive-20261024" defer></script>
 </head>
 <body>
-  <a id="skip-link" class="skip-link" href="#main">Zum Inhalt springen</a>
-
-  <header class="site-header" role="banner">
-    <div class="container">
-      <h1 id="siteTitle">Für Renade – Solidarität und Gedenken</h1>
-      <nav id="lang-nav" aria-label="Sprachwahl">
-        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Sprache wechseln">DE</button>
-      </nav>
-    </div>
-  </header>
-
+  <a class="skip-link" href="#main" id="skip-link">Zum Inhalt springen</a>
+  <header class="site-header"><div class="container header-row">
+    <a class="wordmark" href="#main" id="site-title">Für Renade</a>
+    <button id="lang-toggle" class="language-button" type="button" aria-label="Switch to English">EN</button>
+  </div></header>
   <main id="main" tabindex="-1">
-    <!-- Hero -->
-    <section id="hero" class="section-hero" aria-labelledby="hero-title">
-      <div class="container grid-hero">
-        <div class="hero-media">
-          <img id="hero-image" src="assets/img/1.jpg" srcset="assets/img/1.jpg 600w" sizes="(max-width: 640px) 100vw, 600px" alt="Porträtfoto von Renade" loading="lazy" decoding="async">
-        </div>
-        <div class="hero-content">
-          <h2 id="hero-title"><span id="hero-name">Renade</span> <small id="hero-lifespan" class="muted"></small></h2>
-          <p id="hero-tagline" class="lead">In Liebe, Solidarität und Dankbarkeit.</p>
-          <div class="cta-row">
-            <button id="share-btn" class="btn btn-primary" type="button">Teilen</button>
-          </div>
-        </div>
+    <section class="hero" aria-labelledby="thanks-title"><div class="container hero-grid">
+      <figure class="portrait">
+        <img src="assets/img/1.jpg?v=archive-20261024" alt="Porträtfoto von Renade" id="hero-image" width="600" height="600" decoding="async">
+        <figcaption><span id="hero-name">Renade</span> <span id="hero-lifespan"></span></figcaption>
+      </figure>
+      <div class="thank-you">
+        <p class="eyebrow" id="campaign-status">Spendenaktion abgeschlossen</p>
+        <h1 id="thanks-title">Danke für eure Solidarität.</h1>
+        <p class="lead" id="thanks-body">Danke an alle, die gespendet, mitgeholfen oder die Aktion geteilt haben. Eure Unterstützung hat viel bedeutet.</p>
+        <p id="archive-note">Diese Seite bleibt als Erinnerung und Rückblick online. Es werden keine weiteren Spenden gesammelt.</p>
+        <a class="memory-link" href="#memories" id="memory-link">Erinnerungen ansehen ↓</a>
       </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container">
-        <h2 id="about-title">Über Renade</h2>
-        <p id="about-text"></p>
-        <ul id="about-quotes" class="quotes" aria-label="Zitate"></ul>
-      </div>
-    </section>
-
-    <!-- Memories -->
-    <section id="memories" class="section" aria-labelledby="memories-title">
-      <div class="container">
-        <h2 id="memories-title">Erinnerungen & Wirkung</h2>
-        <div id="gallery" class="gallery" aria-label="Bildergalerie"></div>
-        <ul id="testimonials" class="testimonials" aria-label="Stimmen"></ul>
-        <div class="actions">
-          <a id="submit-mail" class="btn btn-secondary" href="mailto:[removed]" title="Im Aufbau – Inhalte, Zitate und Erinnerungen gern an [removed]">Erinnerung senden</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Events -->
-    <section id="events" class="section" aria-labelledby="events-title">
-      <div class="container">
-        <h2 id="events-title">Termine</h2>
-        <ul id="events-list" class="events"></ul>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section" aria-labelledby="faq-title">
-      <div class="container">
-        <h2 id="faq-title">FAQ</h2>
-        <div id="faq-list" class="faq"></div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title">Kontakt</h2>
-        <p id="contact-note"></p>
-      </div>
-    </section>
+    </div></section>
+    <section class="section story" aria-labelledby="about-title"><div class="container story-inner">
+      <p class="eyebrow" id="story-label">In Erinnerung</p>
+      <h2 id="about-title">Über Renade</h2>
+      <div id="about-text" class="story-text"></div>
+      <details id="tributes"><summary id="tributes-title">Erinnerungen in Worten</summary><ul id="about-quotes" class="quotes" hidden></ul></details>
+    </div></section>
+    <section class="section memories" id="memories" aria-labelledby="memories-title"><div class="container">
+      <div class="section-heading"><h2 id="memories-title">Erinnerungen</h2><p id="memories-note">Bilder, die bleiben.</p></div>
+      <div id="gallery" class="gallery" aria-label="Bildergalerie"></div>
+      <ul id="testimonials" class="testimonials" hidden></ul>
+    </div></section>
+    <p class="container load-error" id="load-error" role="status" hidden></p>
   </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p id="footer-credits" class="muted">In Verantwortung: Peter</p>
-      <p id="footer-hashtag" class="muted"></p>
-
-      <details>
-        <summary id="imprint-summary">Impressum</summary>
-        <div id="imprint"></div>
-      </details>
-      <details>
-        <summary id="privacy-summary">Datenschutz</summary>
-        <div id="privacy"></div>
-      </details>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js" defer></script>
-  <noscript>
-    <div class="noscript container" id="noscript-msg">
-      Diese Seite funktioniert auch ohne JavaScript, zeigt jedoch erweiterte Inhalte (i18n, Teilen) mit JavaScript an.
-    </div>
-  </noscript>
+  <footer class="site-footer"><div class="container">
+    <p id="footer-thanks">Danke für eure Unterstützung. Sie bleibt in Erinnerung.</p>
+    <p class="footer-note" id="footer-note">Historischer Rückblick · Die Spendenaktion ist abgeschlossen.</p>
+  </div></footer>
+  <dialog id="photo-dialog" aria-labelledby="photo-caption">
+    <div class="photo-toolbar"><span id="photo-count"></span><button id="photo-close" type="button" aria-label="Bild schließen">×</button></div>
+    <img id="photo-full" alt="">
+    <div class="photo-footer"><button id="photo-prev" type="button" aria-label="Vorheriges Bild">←</button><p id="photo-caption"></p><button id="photo-next" type="button" aria-label="Nächstes Bild">→</button></div>
+  </dialog>
+  <noscript><p class="container">Die Spendenaktion ist abgeschlossen. Vielen Dank für eure Unterstützung. Für die Bildergalerie und den Sprachwechsel wird JavaScript benötigt.</p></noscript>
 </body>
 </html>

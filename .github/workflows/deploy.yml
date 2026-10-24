@@ -29,8 +29,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Upload the repository root as the static site artifact
-      # This includes index.html, styles.css, and any other static assets.
+      - name: Stage approved public files
+        run: python3 scripts/build_site.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
